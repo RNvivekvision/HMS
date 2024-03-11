@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-HMS-HMSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-HMS-HMSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E2B064A32B9F3BA8004DDF70 /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0649C2B9F3BA8004DDF70 /* SFProDisplay-Bold.ttf */; };
+		E2B064A42B9F3BA8004DDF70 /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0649D2B9F3BA8004DDF70 /* SFProDisplay-Black.ttf */; };
+		E2B064A52B9F3BA8004DDF70 /* SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0649E2B9F3BA8004DDF70 /* SFProDisplay-Thin.ttf */; };
+		E2B064A62B9F3BA8004DDF70 /* SFProDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B0649F2B9F3BA8004DDF70 /* SFProDisplay-Light.ttf */; };
+		E2B064A72B9F3BA8004DDF70 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B064A02B9F3BA8004DDF70 /* SFProDisplay-Regular.ttf */; };
+		E2B064A82B9F3BA8004DDF70 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B064A12B9F3BA8004DDF70 /* SFProDisplay-Semibold.ttf */; };
+		E2B064A92B9F3BA8004DDF70 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B064A22B9F3BA8004DDF70 /* SFProDisplay-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,13 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-HMS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HMS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = HMS/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-HMS-HMSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMS-HMSTests.release.xcconfig"; path = "Target Support Files/Pods-HMS-HMSTests/Pods-HMS-HMSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2B0649C2B9F3BA8004DDF70 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Bold.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		E2B0649D2B9F3BA8004DDF70 /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Black.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
+		E2B0649E2B9F3BA8004DDF70 /* SFProDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Thin.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Thin.ttf"; sourceTree = "<group>"; };
+		E2B0649F2B9F3BA8004DDF70 /* SFProDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Light.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Light.ttf"; sourceTree = "<group>"; };
+		E2B064A02B9F3BA8004DDF70 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Regular.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		E2B064A12B9F3BA8004DDF70 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Semibold.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		E2B064A22B9F3BA8004DDF70 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Medium.ttf"; path = "../../Sources/Assets/Fonts/SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -116,6 +130,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E2B0647F2B9F3837004DDF70 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* HMS */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* HMSTests */,
@@ -146,6 +161,20 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-HMS-HMSTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2B0647F2B9F3837004DDF70 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2B0649D2B9F3BA8004DDF70 /* SFProDisplay-Black.ttf */,
+				E2B0649C2B9F3BA8004DDF70 /* SFProDisplay-Bold.ttf */,
+				E2B0649F2B9F3BA8004DDF70 /* SFProDisplay-Light.ttf */,
+				E2B064A22B9F3BA8004DDF70 /* SFProDisplay-Medium.ttf */,
+				E2B064A02B9F3BA8004DDF70 /* SFProDisplay-Regular.ttf */,
+				E2B064A12B9F3BA8004DDF70 /* SFProDisplay-Semibold.ttf */,
+				E2B0649E2B9F3BA8004DDF70 /* SFProDisplay-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +270,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B064A42B9F3BA8004DDF70 /* SFProDisplay-Black.ttf in Resources */,
+				E2B064A82B9F3BA8004DDF70 /* SFProDisplay-Semibold.ttf in Resources */,
+				E2B064A52B9F3BA8004DDF70 /* SFProDisplay-Thin.ttf in Resources */,
+				E2B064A32B9F3BA8004DDF70 /* SFProDisplay-Bold.ttf in Resources */,
+				E2B064A72B9F3BA8004DDF70 /* SFProDisplay-Regular.ttf in Resources */,
+				E2B064A62B9F3BA8004DDF70 /* SFProDisplay-Light.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E2B064A92B9F3BA8004DDF70 /* SFProDisplay-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +580,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -572,6 +608,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -579,7 +616,10 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -616,7 +656,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -636,6 +676,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -643,7 +684,10 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
