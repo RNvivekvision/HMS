@@ -4,14 +4,17 @@ import { Colors, hp } from '../Theme';
 const RNPagginationLoader = ({ size, color, style }) => {
   return (
     <View style={[styles.Box, style]}>
-      <ActivityIndicator size={size || 'large'} color={color || Colors.Primary} />
+      <ActivityIndicator
+        size={size || 'large'}
+        color={color || Colors.Loader}
+      />
     </View>
   );
 };
 const styles = StyleSheet.create({
   Box: {
-    backgroundColor: Colors.White,
-    paddingVertical: hp(2),
+    // backgroundColor: Colors.White,
+    // paddingVertical: hp(2),
   },
 });
 export default RNPagginationLoader;

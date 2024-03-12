@@ -5,7 +5,10 @@ import RNStyles from './RNStyles';
 const RNLoader = ({ visible, style, color, size }) => {
   return visible ? (
     <View style={[styles.Container, style]}>
-      <ActivityIndicator size={size ?? 'large'} color={color || Colors.Primary} />
+      <ActivityIndicator
+        size={size ?? 'large'}
+        color={color || Colors.Loader}
+      />
     </View>
   ) : null;
 };
