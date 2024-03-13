@@ -42,15 +42,13 @@ const styles = StyleSheet.create({
     paddingVertical: wp(5),
   },
   Box: {
-    width: wp(6),
-    height: wp(6),
+    ...RNStyles.icon,
     borderWidth: 1,
     borderColor: Colors.Black,
     borderRadius: wp(1),
   },
   icon: {
-    width: wp(6),
-    height: wp(6),
+    ...RNStyles.icon,
   },
 });
 

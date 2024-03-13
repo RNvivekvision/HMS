@@ -25,6 +25,9 @@ const Images = {
   StandingData: require(ImagePath + 'StandingData' + png),
   Storage: require(ImagePath + 'Storage' + png),
   Templates: require(ImagePath + 'Templates' + png),
+  Edit: require(ImagePath + 'Edit' + png),
+  Delete: require(ImagePath + 'Delete' + png),
+  Cross: require(ImagePath + 'Cross' + png),
 
   Dummy_user1: require(ImagePath + 'Dummy_user1' + png),
 };

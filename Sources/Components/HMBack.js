@@ -1,10 +1,8 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { RNStyles, RNImage, RNText } from '../Common';
 import { Images } from '../Constants';
-import RNStyles from './RNStyles';
-import RNImage from './RNImage';
-import RNText from './RNText';
 import { wp } from '../Theme';
 
 const HMBack = ({ containerStyle, iconStyle, text }) => {

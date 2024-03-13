@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { OtpInput } from 'react-native-otp-entry';
-import { AuthHeader } from '../Components';
-import { HMBack, RNButton, RNDevider, RNText } from '../Common';
+import { AuthHeader, HMBack } from '../Components';
+import { RNButton, RNDevider, RNText } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { NavRoutes } from '../Navigation';
 

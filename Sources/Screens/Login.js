@@ -1,18 +1,18 @@
 import React, { useRef, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { AuthHeader, RememberMe } from '../Components';
-import { HMInput, RNButton, RNDevider, RNText } from '../Common';
+import { AuthHeader, RememberMe, HMInput } from '../Components';
+import { RNButton, RNDevider, RNText } from '../Common';
 import { Colors, FontFamily, FontSize, hp } from '../Theme';
 import { Images } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
 const Login = ({ navigation }) => {
+  const passwordRef = useRef();
   const [State, setState] = useState({
     email: '',
     password: '',
     passwordSecure: true,
   });
-  const passwordRef = useRef();
 
   return (
     <AuthHeader>
@@ -58,7 +58,10 @@ const Login = ({ navigation }) => {
         </TouchableOpacity>
       </RememberMe>
 
-      <RNButton title={'Login'} />
+      <RNButton
+        title={'Login'}
+        onPress={() => navigation.replace(NavRoutes.Drawer)}
+      />
     </AuthHeader>
   );
 };

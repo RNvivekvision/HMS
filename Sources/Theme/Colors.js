@@ -12,6 +12,9 @@ const Colors = {
   Devider: '#201E29',
   Error: '#EF0000',
   drawerInactive: '#9199C8',
+  Edit: '#009506',
+  Live: '#00A71B',
+  DropdownPlaceHolder: '#90909A',
 };
 
 export default Colors;

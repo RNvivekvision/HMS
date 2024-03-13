@@ -10,15 +10,7 @@ const Drawer = createDrawerNavigator();
 const Index = () => {
   return (
     <Drawer.Navigator
-      screenOptions={{
-        ...NavConfigs.screenOptions,
-        drawerType: 'front',
-        drawerStyle: {
-          backgroundColor: 'transparent',
-          width: '80%',
-        },
-        overlayColor: '#ffffff80',
-      }}
+      screenOptions={NavConfigs.drawerOptions}
       drawerContent={p => <DrawerContent {...p} />}>
       <Drawer.Screen name={NavRoutes.Home} component={Home} />
     </Drawer.Navigator>

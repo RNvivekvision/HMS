@@ -54,8 +54,7 @@ const styles = StyleSheet.create({
   },
   Left: {
     ...RNStyles.center,
-    width: wp(6),
-    height: wp(6),
+    ...RNStyles.icon,
   },
   title: {
     flex: 1,
@@ -67,8 +66,7 @@ const styles = StyleSheet.create({
   },
   Right: {
     ...RNStyles.center,
-    width: wp(6),
-    height: wp(6),
+    ...RNStyles.icon,
   },
 });
 

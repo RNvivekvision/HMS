@@ -1,10 +1,7 @@
 import React, { forwardRef } from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Colors, hp, wp } from '../Theme';
-import RNInput from './RNInput';
-import RNStyles from './RNStyles';
-import RNText from './RNText';
-import RNIcon from './RNIcon';
+import { RNInput, RNStyles, RNText, RNIcon } from '../Common';
 
 const HMInput = forwardRef(
   ({ title, icon, onIconPress, error, ...rest }, ref) => {

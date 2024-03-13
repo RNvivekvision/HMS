@@ -2,17 +2,16 @@ import React from 'react';
 import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { RNGradient, RNStyles, RNIcon } from '../Common';
 import { Colors, hp, wp } from '../Theme';
 import { Images } from '../Constants';
-import RNGradient from './RNGradient';
-import RNStyles from './RNStyles';
-import RNIcon from './RNIcon';
 
 const HMHeader = ({
   gradientStyle,
   containerStyle,
   contentContainerStyle,
   children,
+  scrollProps,
 }) => {
   const navigation = useNavigation();
   const styles = useStyles();
@@ -46,7 +45,11 @@ const HMHeader = ({
           </View>
         </View>
       </RNGradient>
-      <ScrollView>
+      <ScrollView
+        contentContainerStyle={styles.contentContainerStyle}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        {...scrollProps}>
         <View style={[RNStyles.container, contentContainerStyle]}>
           {children}
         </View>
@@ -59,6 +62,10 @@ const bottomRadius = wp(5);
 const useStyles = () => {
   const inset = useSafeAreaInsets();
   return StyleSheet.create({
+    contentContainerStyle: {
+      paddingBottom: inset.bottom + hp(2),
+      paddingVertical: hp(2),
+    },
     container: {
       paddingTop: inset.top,
       borderBottomLeftRadius: bottomRadius,

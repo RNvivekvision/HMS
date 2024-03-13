@@ -17,6 +17,7 @@ const RNText = ({
   pHorizontal,
   pVertical,
   spacing,
+  textLine,
   onPress,
   ...restProps
 }) => {
@@ -32,6 +33,7 @@ const RNText = ({
     paddingBottom: pBottom,
     paddingHorizontal: pHorizontal,
     paddingVertical: pVertical,
+    textDecorationLine: textLine,
     letterSpacing: spacing ?? 1,
   };
   return (

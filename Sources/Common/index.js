@@ -12,8 +12,4 @@ export { default as RNDevider } from './RNDevider';
 export { default as RNIcon } from './RNIcon';
 export { default as RNInput } from './RNInput';
 export { default as RNStyles } from './RNStyles';
-
-export { default as HMInput } from './HMInput';
-export { default as HMBack } from './HMBack';
-export { default as HMHeader } from './HMHeader';
-export { default as HMSearchFilter } from './HMSearchFilter';
+export { default as RNBottomSheet } from './RNBottomSheet';

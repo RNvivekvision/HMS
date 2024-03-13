@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AuthHeader } from '../Components';
-import { HMBack, HMInput, RNButton, RNDevider, RNText } from '../Common';
+import { RNButton, RNDevider, RNText } from '../Common';
+import { AuthHeader, HMBack, HMInput } from '../Components';
 import { FontFamily, FontSize, hp } from '../Theme';
 import { NavRoutes } from '../Navigation';
 
