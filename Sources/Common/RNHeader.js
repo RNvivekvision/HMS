@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, isIOS, wp } from '../Theme';
 import RNText from './RNText';
@@ -18,27 +18,23 @@ const RNHeader = ({
   return (
     <View style={[styles.Container, containerStyle]}>
       {LeftIcon ? (
-        <TouchableOpacity
+        <RNIcon
+          icon={LeftIcon}
+          iconStyle={RNStyles.image90}
           onPress={() => (onLeftPress ? onLeftPress?.() : navigation.goBack())}
-          style={styles.Left}>
-          <Image
-            source={LeftIcon}
-            resizeMode={'contain'}
-            style={RNStyles.image90}
-          />
-        </TouchableOpacity>
+          containerStyle={styles.Left}
+        />
       ) : (
         <View style={styles.Left} />
       )}
       <RNText style={[styles.title, titleStyle]}>{title}</RNText>
       {RightIcon ? (
-        <TouchableOpacity onPress={onRightPress} style={styles.Right}>
-          <Image
-            source={RightIcon}
-            resizeMode={'contain'}
-            style={RNStyles.image90}
-          />
-        </TouchableOpacity>
+        <RNIcon
+          icon={RightIcon}
+          iconStyle={RNStyles.image90}
+          onPress={onRightPress}
+          containerStyle={styles.Right}
+        />
       ) : (
         <View style={styles.Right} />
       )}

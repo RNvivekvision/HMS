@@ -1,18 +1,26 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Tasks } from '../../Tasks';
 import NavRoutes from '../NavRoutes';
 import NavConfigs from '../NavConfigs';
 import DrawerContent from './DrawerContent';
+import { Home } from '../../Screens';
 
 const Drawer = createDrawerNavigator();
 
 const Index = () => {
   return (
     <Drawer.Navigator
-      screenOptions={{ ...NavConfigs.screenOptions, drawerType: 'front' }}
+      screenOptions={{
+        ...NavConfigs.screenOptions,
+        drawerType: 'front',
+        drawerStyle: {
+          backgroundColor: 'transparent',
+          width: '80%',
+        },
+        overlayColor: '#ffffff80',
+      }}
       drawerContent={p => <DrawerContent {...p} />}>
-      <Drawer.Screen name={NavRoutes.Tasks} component={Tasks} />
+      <Drawer.Screen name={NavRoutes.Home} component={Home} />
     </Drawer.Navigator>
   );
 };

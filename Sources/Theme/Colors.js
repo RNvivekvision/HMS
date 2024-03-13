@@ -11,6 +11,7 @@ const Colors = {
   Loader: '#3B4375',
   Devider: '#201E29',
   Error: '#EF0000',
+  drawerInactive: '#9199C8',
 };
 
 export default Colors;

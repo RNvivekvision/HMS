@@ -4,6 +4,7 @@ import { Colors, hp, wp } from '../Theme';
 import RNInput from './RNInput';
 import RNStyles from './RNStyles';
 import RNText from './RNText';
+import RNIcon from './RNIcon';
 
 const HMInput = forwardRef(
   ({ title, icon, onIconPress, error, ...rest }, ref) => {
@@ -21,12 +22,12 @@ const HMInput = forwardRef(
           />
 
           {icon && (
-            <TouchableOpacity
-              style={styles.IconContainer}
-              activeOpacity={0.6}
-              onPress={onIconPress}>
-              <Image source={icon} resizeMode={'contain'} style={styles.icon} />
-            </TouchableOpacity>
+            <RNIcon
+              icon={icon}
+              iconStyle={styles.icon}
+              onPress={onIconPress}
+              containerStyle={styles.IconContainer}
+            />
           )}
         </View>
       </View>

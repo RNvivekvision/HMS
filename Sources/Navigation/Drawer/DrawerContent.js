@@ -1,55 +1,120 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Switch, View } from 'react-native';
-import { useRNStyles, useTheme } from '../../Hooks';
-import { RNText } from '../../Common';
+import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { RNText, RNStyles, RNGradient, RNImage, RNIcon } from '../../Common';
+import { hp, wp, Colors, FontFamily } from '../../Theme';
 import { DummyData } from '../../Utils';
-import { useSelector } from 'react-redux';
+import { Images } from '../../Constants';
 
-const DrawerContent = ({}) => {
-  const styles = useStyles();
+const DrawerContent = ({ navigation }) => {
+  const [State, setState] = useState({ selectedIndex: 0 });
+  const styles = useStyles({});
 
-  const RenderItems = ({ item, index }) => {
-    const { Colors, setNewTheme } = useTheme();
-    const { theme } = useSelector(({ ThemeReducer }) => ThemeReducer);
-
-    const [State, setState] = useState({ isEnable: theme === item?.value });
-
-    return (
-      <View style={styles.renderContainer}>
-        <RNText>{item.label}</RNText>
-      </View>
-    );
+  const onItemPress = index => {
+    setState(p => ({ ...p, selectedIndex: index }));
+    setTimeout(() => {
+      navigation.closeDrawer();
+    }, 500);
   };
 
   return (
-    <View style={styles.container}>
+    <RNGradient
+      colors={[Colors.Primary1, Colors.Primary2]}
+      style={styles.container}>
+      <View style={styles.logoContainer}>
+        <RNImage source={Images.AppLogo} style={styles.logo} />
+        <RNIcon icon={Images.Drawer} onPress={() => navigation.closeDrawer()} />
+      </View>
+
       <FlatList
-        data={DummyData.Themes}
+        data={DummyData.drawerScreens}
         key={(v, i) => String(i)}
-        renderItem={({ item, index }) => <RenderItems item={item} />}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.contentContainerStyle}
+        renderItem={({ item, index }) => (
+          <RenderItems
+            item={item}
+            index={index}
+            isSelected={State.selectedIndex === index}
+            onItemPress={onItemPress}
+          />
+        )}
       />
-    </View>
+    </RNGradient>
   );
 };
 
-const useStyles = () => {
-  const RNStyles = useRNStyles();
+const RenderItems = ({ item, index, isSelected, onItemPress }) => {
+  const styles = useStyles({ isSelected });
+
+  return (
+    <TouchableOpacity
+      activeOpacity={0.6}
+      onPress={() => onItemPress?.(index)}
+      style={styles.renderContainer}>
+      {isSelected && (
+        <View style={styles.gradientOverlay}>
+          <RNGradient
+            style={RNStyles.image100}
+            start={{ x: 1, y: 0 }}
+            end={{ x: 0, y: 0 }}
+            colors={[Colors.Primary1, Colors.Primary2]}
+          />
+        </View>
+      )}
+      <RNImage source={item.icon} style={styles.icon} />
+      <RNText style={styles.name}>{item.name}</RNText>
+    </TouchableOpacity>
+  );
+};
+
+const useStyles = ({ isSelected }) => {
   const inset = useSafeAreaInsets();
-  const { Colors, wp, hp } = useTheme();
 
   return StyleSheet.create({
+    contentContainerStyle: {
+      paddingTop: hp(2),
+      paddingBottom: inset.bottom + hp(1),
+    },
     container: {
       ...RNStyles.container,
       paddingTop: inset.top,
+      borderTopRightRadius: wp(7),
+      borderBottomRightRadius: wp(7),
+      overflow: 'hidden',
     },
     renderContainer: {
+      ...RNStyles.flexRow,
+      paddingVertical: hp(1.5),
+      paddingHorizontal: wp(8),
+    },
+    icon: {
+      width: wp(7),
+      height: wp(7),
+      tintColor: isSelected ? Colors.White : Colors.drawerInactive,
+    },
+    name: {
+      color: isSelected ? Colors.White : Colors.drawerInactive,
+      fontFamily: FontFamily.Bold,
+      paddingLeft: wp(4),
+    },
+    gradientOverlay: {
+      ...RNStyles.flexRow,
+      ...StyleSheet.absoluteFillObject,
+      borderLeftWidth: 5,
+      borderLeftColor: Colors.Button,
+    },
+    logoContainer: {
       ...RNStyles.flexRowBetween,
-      borderBottomWidth: 1,
-      borderBottomColor: Colors.Placeholder,
-      marginVertical: hp(0.5),
       paddingVertical: hp(2),
-      paddingHorizontal: wp(2),
+      borderBottomWidth: 1,
+      borderBlockColor: Colors.White + '50',
+      marginHorizontal: wp(4),
+    },
+    logo: {
+      width: '60%',
+      height: hp(7),
+      alignSelf: 'center',
     },
   });
 };

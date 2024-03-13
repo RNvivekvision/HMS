@@ -7,6 +7,26 @@ const Images = {
   Hide: require(ImagePath + 'Hide' + png),
   Show: require(ImagePath + 'Show' + png),
   RememberTrue: require(ImagePath + 'RememberTrue' + png),
+  Drawer: require(ImagePath + 'Drawer' + png),
+  Notification: require(ImagePath + 'Notification' + png),
+  Search: require(ImagePath + 'Search' + png),
+  Filter: require(ImagePath + 'Filter' + png),
+  Archive: require(ImagePath + 'Archive' + png),
+  Businesses: require(ImagePath + 'Businesses' + png),
+  Contracts: require(ImagePath + 'Contracts' + png),
+  DBAdmin: require(ImagePath + 'DBAdmin' + png),
+  Deliveries: require(ImagePath + 'Deliveries' + png),
+  Invoicing: require(ImagePath + 'Invoicing' + png),
+  knMgmt: require(ImagePath + 'knMgmt' + png),
+  Modules: require(ImagePath + 'Modules' + png),
+  Products: require(ImagePath + 'Products' + png),
+  Reports: require(ImagePath + 'Reports' + png),
+  Settings: require(ImagePath + 'Settings' + png),
+  StandingData: require(ImagePath + 'StandingData' + png),
+  Storage: require(ImagePath + 'Storage' + png),
+  Templates: require(ImagePath + 'Templates' + png),
+
+  Dummy_user1: require(ImagePath + 'Dummy_user1' + png),
 };
 
 export default Images;

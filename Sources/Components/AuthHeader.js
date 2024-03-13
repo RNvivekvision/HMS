@@ -16,6 +16,7 @@ const AuthHeader = ({
   return (
     <View style={[RNStyles.container, containerStyle]}>
       <StatusBar backgroundColor={Colors.Primary1} translucent={true} />
+
       <RNGradient
         colors={[Colors.Primary1, Colors.Primary2]}
         style={[styles.container, gradientStyle]}>
