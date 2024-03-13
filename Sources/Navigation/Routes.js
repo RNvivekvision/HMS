@@ -16,7 +16,7 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={NavConfigs.screenOptions}>
-        <Stack.Screen name={NavRoutes.Drawer} component={Drawer} />
+        {/* Authentication */}
         <Stack.Screen name={NavRoutes.Login} component={Login} />
         <Stack.Screen
           name={NavRoutes.ForgotPassword}
@@ -27,6 +27,9 @@ const Routes = () => {
           name={NavRoutes.ResetPassword}
           component={ResetPassword}
         />
+
+        {/* Application */}
+        <Stack.Screen name={NavRoutes.Drawer} component={Drawer} />
       </Stack.Navigator>
     </NavigationContainer>
   );
