@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { StyleSheet } from 'react-native';
 import { AuthHeader, RememberMe, HMBack, HMInput } from '../Components';
 import { RNButton, RNDevider, RNText } from '../Common';
 import { FontFamily, FontSize, hp } from '../Theme';
@@ -71,7 +70,5 @@ const ResetPassword = ({ navigation }) => {
     </AuthHeader>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default ResetPassword;

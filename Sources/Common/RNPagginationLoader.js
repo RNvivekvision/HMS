@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, ActivityIndicator, View } from 'react-native';
-import { Colors, hp } from '../Theme';
+import { ActivityIndicator, View } from 'react-native';
+import { Colors } from '../Theme';
 const RNPagginationLoader = ({ size, color, style }) => {
   return (
-    <View style={[styles.Box, style]}>
+    <View style={[style]}>
       <ActivityIndicator
         size={size || 'large'}
         color={color || Colors.Loader}
@@ -11,10 +11,4 @@ const RNPagginationLoader = ({ size, color, style }) => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  Box: {
-    // backgroundColor: Colors.White,
-    // paddingVertical: hp(2),
-  },
-});
 export default RNPagginationLoader;

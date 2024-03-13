@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Colors, wp } from '../Theme';
 import RNStyles from './RNStyles';
 import RNImage from './RNImage';
-import { Colors, wp } from '../Theme';
-import { RNGradient } from '.';
+import RNGradient from './RNGradient';
 
 const size = wp(8);
 
