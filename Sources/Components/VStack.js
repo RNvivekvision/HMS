@@ -14,7 +14,6 @@ const VStack = ({ item }) => {
         <RNImage source={item.profilePic} style={styles.profilePic} />
       </View>
       <RNText style={styles.name}>{item.name}</RNText>
-      <RNText style={styles.name}>{item.id}</RNText>
       <RNText size={FontSize.font8}>{item.number}</RNText>
 
       <RNButton
