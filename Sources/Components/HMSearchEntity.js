@@ -26,7 +26,6 @@ const HMSearchEntity = () => {
       ...p,
       selectedRights: new Array(State.rights.length).fill(false),
     }));
-    console.log('callee.....');
   }, [State.rights]);
 
   useEffect(() => {

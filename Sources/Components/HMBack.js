@@ -7,7 +7,6 @@ import { wp } from '../Theme';
 
 const HMBack = ({ containerStyle, iconStyle, text }) => {
   const navigation = useNavigation();
-
   return (
     <TouchableOpacity
       activeOpacity={0.6}

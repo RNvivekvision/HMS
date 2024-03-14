@@ -12,7 +12,6 @@ const HMEntity = ({ data, title, containerStyle }) => {
           <RNText family={FontFamily.SemiBold}>{title || ''}</RNText>
         </View>
       )}
-
       {data?.length > 0 &&
         data.map((v, i) => (
           <View key={i} style={styles.renderEntityContainer}>
@@ -20,7 +19,6 @@ const HMEntity = ({ data, title, containerStyle }) => {
               <RNText family={FontFamily.SemiBold}>{v.title}</RNText>
               <RNText style={styles.renderEntityText}>{v.text}</RNText>
             </View>
-
             <View style={RNStyles.flexRow}>
               <RNIcon
                 icon={Images.Edit}

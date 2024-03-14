@@ -7,11 +7,11 @@ const screenOptions = {
 const drawerOptions = {
   ...screenOptions,
   drawerType: 'front',
+  overlayColor: Colors.White + '80',
   drawerStyle: {
-    backgroundColor: 'transparent',
+    backgroundColor: Colors.Transparent,
     width: '80%',
   },
-  overlayColor: Colors.White + '80',
 };
 const NavConfigs = {
   screenOptions,

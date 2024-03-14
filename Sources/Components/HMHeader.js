@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { RNGradient, RNStyles, RNIcon, RNScrollView } from '../Common';
+import { RNGradient, RNStyles, RNIcon } from '../Common';
 import { Colors, hp, wp } from '../Theme';
 import { Images } from '../Constants';
 import { useInset } from '../Hooks';

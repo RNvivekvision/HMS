@@ -70,7 +70,6 @@ const RenderItems = ({ item, index, isSelected, onItemPress }) => {
 
 const useStyles = ({ isSelected }) => {
   const inset = useInset();
-
   return StyleSheet.create({
     contentContainerStyle: {
       paddingTop: hp(2),

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { RNScrollView, RNStyles, RNText } from '../Common';
+import { RNStyles, RNText } from '../Common';
 import { FontFamily, FontSize, hp, wp } from '../Theme';
 import HStack from './HStack';
 import VStack from './VStack';

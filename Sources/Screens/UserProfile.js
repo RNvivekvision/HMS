@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import {
   RNGradient,
   RNIcon,
@@ -59,7 +59,6 @@ const UserProfile = ({ navigation }) => {
         </View>
       </RNGradient>
 
-      {/* <ScrollView showsVerticalScrollIndicator={false}> */}
       <RNScrollView>
         <View style={styles.UserDetailsContainer}>
           {DummyData.UserProfile.UserDetail.map((v, i) => (
@@ -71,15 +70,11 @@ const UserProfile = ({ navigation }) => {
         </View>
 
         <HMEntity
-          containerStyle={{
-            marginHorizontal: wp(4),
-          }}
+          containerStyle={{ marginHorizontal: wp(4) }}
           data={DummyData.UserProfile.EntitiesAndRights}
           title={'Entities & Rights'}
         />
       </RNScrollView>
-
-      {/* </ScrollView> */}
     </View>
   );
 };
@@ -138,30 +133,6 @@ const useStyles = () => {
       borderRadius: wp(4),
       marginHorizontal: wp(4),
       marginVertical: hp(3),
-    },
-    entityTitleContainer: {
-      paddingVertical: hp(2),
-      paddingHorizontal: wp(4),
-      backgroundColor: Colors.PlaceholderBackground,
-      borderTopLeftRadius: wp(4),
-      borderTopRightRadius: wp(4),
-    },
-    renderEntityContainer: {
-      ...RNStyles.flexRow,
-      paddingVertical: hp(2),
-      paddingHorizontal: wp(4),
-    },
-    iconContainer: {
-      width: wp(8),
-      height: wp(8),
-      borderRadius: 100,
-      backgroundColor: Colors.Edit + '15',
-      marginHorizontal: wp(1.5),
-    },
-    renderEntityText: {
-      fontSize: FontSize.font12,
-      color: textColor,
-      paddingTop: hp(0.5),
     },
   });
 };

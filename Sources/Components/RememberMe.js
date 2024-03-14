@@ -28,7 +28,7 @@ const RememberMe = ({ containerStyle, onPress, title, children }) => {
             size={FontSize.font14}
             pHorizontal={wp(2)}
             color={Colors.Black}>
-            {title || 'Remember me'}
+            {'Remember me'}
           </RNText>
         </View>
       </TouchableOpacity>

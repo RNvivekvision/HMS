@@ -19,7 +19,6 @@ const HMSearchFilter = forwardRef(
               iconStyle={{ tintColor: Colors.Placeholder }}
             />
           )}
-
           <RNInput
             ref={ref}
             placeholderTextColor={Colors.Placeholder}
@@ -27,7 +26,6 @@ const HMSearchFilter = forwardRef(
             {...rest}
           />
         </View>
-
         <RNIcon
           gradient={true}
           icon={Images.Filter}

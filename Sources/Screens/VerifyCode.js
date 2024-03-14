@@ -7,6 +7,7 @@ import { NavRoutes } from '../Navigation';
 
 const VerifyCode = ({ navigation }) => {
   const [State, setState] = useState({ otp: '' });
+  console.log({ State });
 
   return (
     <AuthHeader>
@@ -44,7 +45,6 @@ const VerifyCode = ({ navigation }) => {
 
 const otpTheme = {
   containerStyle: {
-    // paddingHorizontal: wp(2),
     paddingVertical: hp(1),
   },
   pinCodeContainerStyle: {
@@ -57,8 +57,12 @@ const otpTheme = {
     fontFamily: FontFamily.Bold,
     color: Colors.Black,
   },
-  focusStickStyle: { backgroundColor: Colors.Button },
-  focusedPinCodeContainerStyle: { borderColor: Colors.Button },
+  focusStickStyle: {
+    backgroundColor: Colors.Button,
+  },
+  focusedPinCodeContainerStyle: {
+    borderColor: Colors.Button,
+  },
 };
 
 export default VerifyCode;

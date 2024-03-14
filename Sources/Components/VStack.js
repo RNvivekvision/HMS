@@ -15,13 +15,11 @@ const VStack = ({ item }) => {
       </View>
       <RNText style={styles.name}>{item.name}</RNText>
       <RNText size={FontSize.font8}>{item.number}</RNText>
-
       <RNButton
         title={'View Profile'}
         textStyle={{ fontSize: FontSize.font10 }}
         style={styles.viewProfile}
       />
-
       <View style={RNStyles.flexRow}>
         <RNIcon
           icon={Images.Edit}

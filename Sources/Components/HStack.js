@@ -18,14 +18,12 @@ const HStack = ({ item }) => {
           <RNText size={FontSize.font8}>{item.number}</RNText>
         </View>
       </View>
-
       <View style={styles.renderButtons}>
         <RNButton
           title={'View Profile'}
           textStyle={{ fontSize: FontSize.font12 }}
           style={styles.viewProfile}
         />
-
         <View style={RNStyles.flexRow}>
           <RNIcon
             icon={Images.Edit}
