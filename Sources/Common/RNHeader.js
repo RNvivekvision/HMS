@@ -1,14 +1,8 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import {
-  RNKeyboardAvoid,
-  RNIcon,
-  RNStyles,
-  RNText,
-  RNScrollView,
-} from './index';
+import { RNIcon, RNStyles, RNText, RNScrollView } from './index';
 import { Images } from '../Constants';
 import { useInset } from '../Hooks';
 

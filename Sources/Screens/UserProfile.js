@@ -13,6 +13,7 @@ import { Images } from '../Constants';
 import { DummyData } from '../Utils';
 import { useInset } from '../Hooks';
 import { HMEntity } from '../Components';
+import { NavRoutes } from '../Navigation';
 
 const UserProfile = ({ navigation }) => {
   const styles = useStyles();
@@ -40,7 +41,11 @@ const UserProfile = ({ navigation }) => {
             </RNText>
           </View>
 
-          <RNIcon icon={Images.EditUserProfile} iconStyle={styles.iconStyle} />
+          <RNIcon
+            icon={Images.EditUserProfile}
+            iconStyle={styles.iconStyle}
+            onPress={() => navigation.navigate(NavRoutes.EditProfile)}
+          />
         </View>
 
         <View style={{ alignItems: 'center' }}>

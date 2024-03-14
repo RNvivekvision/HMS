@@ -59,7 +59,7 @@ const HomeFilterContent = forwardRef(({}, ref) => {
 const styles = StyleSheet.create({
   button: {
     marginHorizontal: wp(4),
-    marginVertical: hp(4),
+    marginVertical: hp(3),
   },
   dropdownContainer: {
     paddingHorizontal: wp(4),

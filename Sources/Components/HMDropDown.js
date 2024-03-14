@@ -13,19 +13,32 @@ const HMDropDown = ({
   onChange,
   position,
   containerStyle,
+  dropdownStyle,
+  dropdownPlaceholderStyle,
+  dropDownSelectedTextStyle,
+  dropDownIconStyle,
+  dropDownItemTextStyle,
+  search,
+  searchPlaceholder,
+  renderInputSearch,
+  inputSearchStyle,
+  renderLeftIcon,
   ...rest
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      <RNText color={Colors.DropdownPlaceHolder}>{title}</RNText>
+      {title && <RNText color={Colors.DropdownPlaceHolder}>{title}</RNText>}
       {data?.length > 0 && (
         <Dropdown
-          style={styles.dropdownStyle}
-          placeholderStyle={styles.placeholderStyle}
-          selectedTextStyle={styles.selectedTextStyle}
-          iconStyle={styles.iconStyle}
+          style={[styles.dropdownStyle, dropdownStyle]}
+          placeholderStyle={[styles.placeholderStyle, dropdownPlaceholderStyle]}
+          selectedTextStyle={[
+            styles.selectedTextStyle,
+            dropDownSelectedTextStyle,
+          ]}
+          iconStyle={[styles.iconStyle, dropDownIconStyle]}
           activeColor={Colors.PlaceholderBackground}
-          itemTextStyle={styles.itemTextStyle}
+          itemTextStyle={[styles.itemTextStyle, dropDownItemTextStyle]}
           data={data}
           maxHeight={maxHeight ?? hp(25)}
           labelField="label"
@@ -34,6 +47,13 @@ const HMDropDown = ({
           value={value}
           onChange={onChange}
           dropdownPosition={position ?? 'auto'}
+          search={search}
+          searchPlaceholder={searchPlaceholder}
+          renderInputSearch={
+            renderInputSearch ? v => renderInputSearch?.(v) : null
+          }
+          inputSearchStyle={[styles.inputSearchStyle, inputSearchStyle]}
+          renderLeftIcon={renderLeftIcon}
           {...rest}
         />
       )}
@@ -43,14 +63,14 @@ const HMDropDown = ({
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: hp(2),
+    paddingVertical: hp(1),
   },
   dropdownStyle: {
     backgroundColor: Colors.PlaceholderBackground,
     borderRadius: wp(3),
     paddingHorizontal: wp(5),
-    paddingVertical: hp(0.5),
-    marginTop: hp(1),
+    paddingVertical: hp(0.7),
+    marginTop: hp(1.5),
   },
   placeholderStyle: {
     color: Colors.Placeholder,
@@ -68,6 +88,7 @@ const styles = StyleSheet.create({
     height: wp(8),
     tintColor: Colors.Black,
   },
+  inputSearchStyle: {},
 });
 
 export default HMDropDown;

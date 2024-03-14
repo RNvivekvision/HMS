@@ -6,6 +6,7 @@ import { NavConfigs, NavRoutes } from './index';
 import Drawer from './Drawer';
 import {
   AddNewUser,
+  EditProfile,
   ForgotPassword,
   Login,
   ResetPassword,
@@ -39,6 +40,7 @@ const Routes = () => {
         <Stack.Screen name={NavRoutes.Drawer} component={Drawer} />
         <Stack.Screen name={NavRoutes.UserProfile} component={UserProfile} />
         <Stack.Screen name={NavRoutes.AddNewUser} component={AddNewUser} />
+        <Stack.Screen name={NavRoutes.EditProfile} component={EditProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

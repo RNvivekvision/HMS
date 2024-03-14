@@ -9,11 +9,11 @@ import {
   RNText,
 } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { HMDropDown, HMEntity, HMInput, HMSearchEntity } from '../Components';
+import { HMDropDown, HMEntity, HMInput } from '../Components';
 import { Images } from '../Constants';
 import { DummyData } from '../Utils';
 
-const AddNewUser = ({ navigation }) => {
+const EditProfile = () => {
   const confirmPasswordRef = useRef();
   const [State, setState] = useState({
     language: null,
@@ -24,10 +24,10 @@ const AddNewUser = ({ navigation }) => {
   });
 
   return (
-    <RNHeader style={{ paddingHorizontal: wp(4) }} title={'Add New User'}>
+    <RNHeader style={{ paddingHorizontal: wp(4) }} title={'Edit Profile'}>
       <View style={RNStyles.flexRowBetween}>
         <RNText size={FontSize.font18} family={FontFamily.SemiBold}>
-          {'Add New User'}
+          {'Edit User Profile'}
         </RNText>
         <TouchableOpacity style={RNStyles.flexRow}>
           <RNImage source={Images.Reset} style={RNStyles.icon} />
@@ -102,14 +102,21 @@ const AddNewUser = ({ navigation }) => {
         size={FontSize.font18}
         pVertical={hp(0.5)}
         family={FontFamily.SemiBold}>
-        {'Add Entities & Rights'}
+        {'Entities & Rights'}
       </RNText>
 
       <HMEntity
         data={[{ title: 'HMS AG', text: 'Accounts User, Ops Admin' }]}
       />
 
-      <HMSearchEntity />
+      <TouchableOpacity style={styles.AddEntitiesContainer}>
+        <RNText
+          color={Colors.Button}
+          textLine={'underline'}
+          size={FontSize.font14}>
+          {'+Add Entities & Rights'}
+        </RNText>
+      </TouchableOpacity>
 
       <RNButton title={'Add'} />
     </RNHeader>
@@ -136,6 +143,11 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
+  AddEntitiesContainer: {
+    alignSelf: 'flex-end',
+    paddingVertical: hp(1),
+    paddingBottom: hp(3),
+  },
 });
 
-export default AddNewUser;
+export default EditProfile;

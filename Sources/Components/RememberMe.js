@@ -4,7 +4,7 @@ import { RNImage, RNStyles, RNText } from '../Common';
 import { Colors, FontSize, wp } from '../Theme';
 import { Images } from '../Constants';
 
-const RememberMe = ({ containerStyle, onPress, children }) => {
+const RememberMe = ({ containerStyle, onPress, title, children }) => {
   const [State, setState] = useState({ checkbox: true });
 
   const onCheckBoxPress = () => {
@@ -20,15 +20,15 @@ const RememberMe = ({ containerStyle, onPress, children }) => {
         activeOpacity={0.6}>
         <View style={RNStyles.flexRow}>
           {State.checkbox ? (
-            <RNImage source={Images.RememberTrue} style={styles.icon} />
+            <RNImage source={Images.CheckboxTrue} style={styles.icon} />
           ) : (
             <View style={styles.Box} />
           )}
           <RNText
             size={FontSize.font14}
             pHorizontal={wp(2)}
-            color={Colors.N475569}>
-            {'Remember me'}
+            color={Colors.Black}>
+            {title || 'Remember me'}
           </RNText>
         </View>
       </TouchableOpacity>
@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     ...RNStyles.icon,
+    borderRadius: wp(2),
+    tintColor: Colors.Button,
   },
 });
 

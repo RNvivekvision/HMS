@@ -2,7 +2,7 @@ const ImagePath = '../Assets/Images/';
 const png = '.png';
 
 const Images = {
-  RememberTrue: require(ImagePath + 'RememberTrue' + png),
+  CheckboxTrue: require(ImagePath + 'CheckboxTrue' + png),
   Notification: require(ImagePath + 'Notification' + png),
   EditUserProfile: require(ImagePath + 'EditUserProfile' + png),
   UpdateProfilePic: require(ImagePath + 'UpdateProfilePic' + png),

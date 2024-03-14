@@ -5,6 +5,7 @@ import ResetPassword from './ResetPassword';
 import Home from './Home';
 import UserProfile from './UserProfile';
 import AddNewUser from './AddNewUser';
+import EditProfile from './EditProfile';
 
 export {
   Login,
@@ -14,4 +15,5 @@ export {
   Home,
   UserProfile,
   AddNewUser,
+  EditProfile,
 };

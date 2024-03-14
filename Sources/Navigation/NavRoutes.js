@@ -8,6 +8,7 @@ const NavRoutes = {
   Home: 'Home',
   UserProfile: 'User Profile',
   AddNewUser: 'Add New User',
+  EditProfile: 'Edit Profile',
 };
 
 export default NavRoutes;

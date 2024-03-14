@@ -191,6 +191,33 @@ const DummyData = {
       },
     ],
   },
+  Rights: [
+    {
+      title: 'Select All',
+      selectAll: true,
+    },
+    {
+      title: 'Account User',
+    },
+    {
+      title: 'Account User Admin',
+    },
+    {
+      title: 'Storage Admin',
+    },
+    {
+      title: 'Trader User',
+    },
+    {
+      title: 'Storage User',
+    },
+    {
+      title: 'Ops User',
+    },
+    {
+      title: 'Ops Admin',
+    },
+  ],
 };
 
 export default DummyData;

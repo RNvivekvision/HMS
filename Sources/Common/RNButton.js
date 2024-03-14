@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.Button,
     paddingVertical: hp(1.7),
     paddingHorizontal: wp(4),
-    marginHorizontal: wp(2),
+    marginHorizontal: wp(1),
     marginVertical: hp(1),
     borderRadius: wp(3),
   },
