@@ -9,8 +9,9 @@ import {
 } from '../Components';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { DummyData } from '../Utils';
+import { NavRoutes } from '../Navigation';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const ref = useRef();
 
   const vStackData = useMemo(() => {
@@ -22,7 +23,8 @@ const Home = () => {
 
   return (
     <View style={RNStyles.container}>
-      <HMHeader>
+      <HMHeader
+        onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
         <RNText style={styles.title}>{'User list'}</RNText>
 
         <HMSearchFilter
@@ -35,6 +37,7 @@ const Home = () => {
           title={'Latest New User'}
           titleChildrenText={'+ Add New User'}
           titleChildrenStyle={{ color: Colors.Button }}
+          ontitleChildrenPress={() => navigation.navigate(NavRoutes.AddNewUser)}
         />
 
         <HMList

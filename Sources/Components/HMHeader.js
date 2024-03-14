@@ -1,10 +1,10 @@
 import React from 'react';
 import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { RNGradient, RNStyles, RNIcon } from '../Common';
+import { RNGradient, RNStyles, RNIcon, RNScrollView } from '../Common';
 import { Colors, hp, wp } from '../Theme';
 import { Images } from '../Constants';
+import { useInset } from '../Hooks';
 
 const HMHeader = ({
   gradientStyle,
@@ -12,6 +12,9 @@ const HMHeader = ({
   contentContainerStyle,
   children,
   scrollProps,
+  onUserIconPress,
+  onSearchPress,
+  onNotificationPress,
 }) => {
   const navigation = useNavigation();
   const styles = useStyles();
@@ -32,15 +35,18 @@ const HMHeader = ({
             <RNIcon
               icon={Images.Search}
               containerStyle={styles.iconContainerStyle}
+              onPress={onSearchPress}
             />
             <RNIcon
               icon={Images.Notification}
               containerStyle={styles.iconContainerStyle}
+              onPress={onNotificationPress}
             />
             <RNIcon
               icon={Images.Dummy_user1}
               containerStyle={styles.userImageContainer}
               iconStyle={styles.userImage}
+              onPress={onUserIconPress}
             />
           </View>
         </View>
@@ -49,6 +55,7 @@ const HMHeader = ({
         contentContainerStyle={styles.contentContainerStyle}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
+        keyboardShouldPersistTaps={'handled'}
         {...scrollProps}>
         <View style={[RNStyles.container, contentContainerStyle]}>
           {children}
@@ -60,11 +67,12 @@ const HMHeader = ({
 
 const bottomRadius = wp(5);
 const useStyles = () => {
-  const inset = useSafeAreaInsets();
+  const inset = useInset();
+
   return StyleSheet.create({
     contentContainerStyle: {
-      paddingBottom: inset.bottom + hp(2),
-      paddingVertical: hp(2),
+      paddingBottom: inset.bottom,
+      paddingTop: hp(1),
     },
     container: {
       paddingTop: inset.top,

@@ -12,35 +12,38 @@ const HMDropDown = ({
   maxHeight,
   onChange,
   position,
+  containerStyle,
   ...rest
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <RNText color={Colors.DropdownPlaceHolder}>{title}</RNText>
-      <Dropdown
-        style={styles.dropdownStyle}
-        placeholderStyle={styles.placeholderStyle}
-        selectedTextStyle={styles.selectedTextStyle}
-        iconStyle={styles.iconStyle}
-        activeColor={Colors.PlaceholderBackground}
-        data={data}
-        maxHeight={maxHeight ?? hp(25)}
-        labelField="label"
-        valueField="value"
-        placeholder={placeholder ?? ''}
-        value={value}
-        onChange={onChange}
-        dropdownPosition={position ?? 'auto'}
-        {...rest}
-      />
+      {data?.length > 0 && (
+        <Dropdown
+          style={styles.dropdownStyle}
+          placeholderStyle={styles.placeholderStyle}
+          selectedTextStyle={styles.selectedTextStyle}
+          iconStyle={styles.iconStyle}
+          activeColor={Colors.PlaceholderBackground}
+          itemTextStyle={styles.itemTextStyle}
+          data={data}
+          maxHeight={maxHeight ?? hp(25)}
+          labelField="label"
+          valueField="value"
+          placeholder={placeholder ?? ''}
+          value={value}
+          onChange={onChange}
+          dropdownPosition={position ?? 'auto'}
+          {...rest}
+        />
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: wp(4),
-    paddingVertical: hp(1),
+    paddingVertical: hp(2),
   },
   dropdownStyle: {
     backgroundColor: Colors.PlaceholderBackground,
@@ -54,6 +57,11 @@ const styles = StyleSheet.create({
   },
   selectedTextStyle: {
     fontFamily: FontFamily.Medium,
+    color: Colors.Black,
+  },
+  itemTextStyle: {
+    fontFamily: FontFamily.Medium,
+    color: Colors.Black,
   },
   iconStyle: {
     width: wp(8),

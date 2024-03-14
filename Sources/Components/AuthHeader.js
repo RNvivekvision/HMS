@@ -1,15 +1,22 @@
 import React from 'react';
 import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
-import { RNGradient, RNImage, RNKeyboardAvoid, RNStyles } from '../Common';
+import {
+  RNGradient,
+  RNImage,
+  RNKeyboardAvoid,
+  RNScrollView,
+  RNStyles,
+} from '../Common';
 import { Colors, hp, wp } from '../Theme';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Images } from '../Constants';
+import { useInset } from '../Hooks';
 
 const AuthHeader = ({
   children,
   containerStyle,
   gradientStyle,
   contentContainerStyle,
+  scrollProps,
 }) => {
   const styles = useStyles();
 
@@ -23,22 +30,18 @@ const AuthHeader = ({
         <RNImage source={Images.AppLogo} style={styles.logo} />
       </RNGradient>
 
-      <RNKeyboardAvoid>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps={'handled'}>
-          <View style={[styles.content, contentContainerStyle]}>
-            {children}
-          </View>
-        </ScrollView>
-      </RNKeyboardAvoid>
+      <RNScrollView
+        style={[styles.content, contentContainerStyle]}
+        scrollProps={scrollProps}>
+        {children}
+      </RNScrollView>
     </View>
   );
 };
 
 const bottomRadius = wp(5);
 const useStyles = () => {
-  const inset = useSafeAreaInsets();
+  const inset = useInset();
 
   return StyleSheet.create({
     container: {
@@ -56,7 +59,6 @@ const useStyles = () => {
     content: {
       ...RNStyles.container,
       paddingHorizontal: wp(4),
-      paddingVertical: hp(2),
     },
   });
 };

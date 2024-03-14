@@ -5,8 +5,6 @@ import RNStyles from './RNStyles';
 import RNImage from './RNImage';
 import RNGradient from './RNGradient';
 
-const size = wp(8);
-
 const RNIcon = ({
   gradient,
   icon,
@@ -36,6 +34,7 @@ const RNIcon = ({
   );
 };
 
+const size = wp(8);
 const styles = StyleSheet.create({
   container: {
     ...RNStyles.center,

@@ -6,6 +6,8 @@ const NavRoutes = {
 
   Drawer: 'Drawer',
   Home: 'Home',
+  UserProfile: 'User Profile',
+  AddNewUser: 'Add New User',
 };
 
 export default NavRoutes;

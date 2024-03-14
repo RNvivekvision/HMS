@@ -4,7 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from 'react-native-splash-screen';
 import { NavConfigs, NavRoutes } from './index';
 import Drawer from './Drawer';
-import { ForgotPassword, Login, ResetPassword, VerifyCode } from '../Screens';
+import {
+  AddNewUser,
+  ForgotPassword,
+  Login,
+  ResetPassword,
+  UserProfile,
+  VerifyCode,
+} from '../Screens';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +37,8 @@ const Routes = () => {
 
         {/* Application */}
         <Stack.Screen name={NavRoutes.Drawer} component={Drawer} />
+        <Stack.Screen name={NavRoutes.UserProfile} component={UserProfile} />
+        <Stack.Screen name={NavRoutes.AddNewUser} component={AddNewUser} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RNText, RNStyles, RNGradient, RNImage, RNIcon } from '../../Common';
 import { hp, wp, Colors, FontFamily } from '../../Theme';
 import { DummyData } from '../../Utils';
 import { Images } from '../../Constants';
+import { useInset } from '../../Hooks';
 
 const DrawerContent = ({ navigation }) => {
   const [State, setState] = useState({ selectedIndex: 0 });
@@ -69,7 +69,7 @@ const RenderItems = ({ item, index, isSelected, onItemPress }) => {
 };
 
 const useStyles = ({ isSelected }) => {
-  const inset = useSafeAreaInsets();
+  const inset = useInset();
 
   return StyleSheet.create({
     contentContainerStyle: {

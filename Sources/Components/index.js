@@ -8,6 +8,8 @@ import RememberMe from './RememberMe';
 import HomeFilterContent from './HomeFilterContent';
 import HMFilterTitle from './HMFilterTitle';
 import HMDropDown from './HMDropDown';
+import HMEntity from './HMEntity';
+import HMSearchEntity from './HMSearchEntity';
 export {
   AuthHeader,
   RememberMe,
@@ -19,4 +21,6 @@ export {
   HomeFilterContent,
   HMFilterTitle,
   HMDropDown,
+  HMEntity,
+  HMSearchEntity,
 };

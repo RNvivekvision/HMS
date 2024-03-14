@@ -15,6 +15,7 @@ const Colors = {
   Edit: '#009506',
   Live: '#00A71B',
   DropdownPlaceHolder: '#90909A',
+  UserDetail: '#2F3032',
 };
 
 export default Colors;

@@ -2,13 +2,15 @@ const ImagePath = '../Assets/Images/';
 const png = '.png';
 
 const Images = {
+  RememberTrue: require(ImagePath + 'RememberTrue' + png),
+  Notification: require(ImagePath + 'Notification' + png),
+  EditUserProfile: require(ImagePath + 'EditUserProfile' + png),
+  UpdateProfilePic: require(ImagePath + 'UpdateProfilePic' + png),
   AppLogo: require(ImagePath + 'AppLogo' + png),
   Back: require(ImagePath + 'Back' + png),
   Hide: require(ImagePath + 'Hide' + png),
   Show: require(ImagePath + 'Show' + png),
-  RememberTrue: require(ImagePath + 'RememberTrue' + png),
   Drawer: require(ImagePath + 'Drawer' + png),
-  Notification: require(ImagePath + 'Notification' + png),
   Search: require(ImagePath + 'Search' + png),
   Filter: require(ImagePath + 'Filter' + png),
   Archive: require(ImagePath + 'Archive' + png),
@@ -28,6 +30,7 @@ const Images = {
   Edit: require(ImagePath + 'Edit' + png),
   Delete: require(ImagePath + 'Delete' + png),
   Cross: require(ImagePath + 'Cross' + png),
+  Reset: require(ImagePath + 'Reset' + png),
 
   Dummy_user1: require(ImagePath + 'Dummy_user1' + png),
 };

@@ -151,6 +151,46 @@ const DummyData = {
       { label: 'Username 8', value: 'Username 8' },
     ],
   },
+  UserProfile: {
+    Languages: [
+      { label: 'English', value: 'English' },
+      { label: 'Hindi', value: 'Hindi' },
+      { label: 'Gujarati', value: 'Gujarati' },
+      { label: 'Chinese', value: 'Chinese' },
+      { label: 'Marathi', value: 'Marathi' },
+      { label: 'Tamil', value: 'Tamil' },
+      { label: 'Malyalam', value: 'Malyalam' },
+      { label: 'Portuguise', value: 'Portuguise' },
+    ],
+    UserDetail: [
+      {
+        title: 'User Name',
+        text: 'ystarykova',
+      },
+      {
+        title: 'Short Name',
+        text: 'Yst',
+      },
+      {
+        title: 'Language',
+        text: 'English',
+      },
+      {
+        title: 'Email',
+        text: 'yst@hrms-ag.com',
+      },
+    ],
+    EntitiesAndRights: [
+      {
+        title: 'HMS AG',
+        text: 'Accounts User, Ops Admin',
+      },
+      {
+        title: 'HMS Coal',
+        text: 'Trader User, Accounts User Admin OPs Admin',
+      },
+    ],
+  },
 };
 
 export default DummyData;
