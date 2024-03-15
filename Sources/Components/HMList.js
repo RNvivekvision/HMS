@@ -21,6 +21,9 @@ const HMList = ({
   horizontal,
   contentContainerStyle,
   renderItem,
+  onViewProfilePress,
+  onEditPress,
+  onDeletePress,
   ...rest
 }) => {
   const styles = useStyles();
@@ -41,12 +44,24 @@ const HMList = ({
           <View style={styles.VStackContainer}>
             <View style={RNStyles.flexRow}>
               {data[0]?.map((v, i) => (
-                <VStack key={i} item={v} />
+                <VStack
+                  key={i}
+                  item={v}
+                  onViewProfilePress={onViewProfilePress}
+                  onEditPress={onEditPress}
+                  onDeletePress={onDeletePress}
+                />
               ))}
             </View>
             <View style={{ flexDirection: 'row' }}>
               {data[1]?.map((v, i) => (
-                <VStack key={i} item={v} />
+                <VStack
+                  key={i}
+                  item={v}
+                  onViewProfilePress={onViewProfilePress}
+                  onEditPress={onEditPress}
+                  onDeletePress={onDeletePress}
+                />
               ))}
             </View>
           </View>
@@ -62,7 +77,16 @@ const HMList = ({
             contentContainerStyle ?? { paddingHorizontal: wp(4) }
           }
           renderItem={({ item, index }) =>
-            renderItem ? renderItem(item, index) : <HStack item={item} />
+            renderItem ? (
+              renderItem(item, index)
+            ) : (
+              <HStack
+                item={item}
+                onViewProfilePress={onViewProfilePress}
+                onEditPress={onEditPress}
+                onDeletePress={onDeletePress}
+              />
+            )
           }
           {...rest}
         />

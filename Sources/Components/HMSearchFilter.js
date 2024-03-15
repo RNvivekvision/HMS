@@ -6,11 +6,17 @@ import { Images } from '../Constants';
 
 const HMSearchFilter = forwardRef(
   (
-    { icon = Images.Search, onFilterPress, onSearchIconPress, ...rest },
+    {
+      icon = Images.Search,
+      onFilterPress,
+      onSearchIconPress,
+      containerStyle,
+      ...rest
+    },
     ref,
   ) => {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         <View style={styles.inputContainer}>
           {icon && (
             <RNIcon

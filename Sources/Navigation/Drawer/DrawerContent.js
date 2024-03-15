@@ -7,14 +7,17 @@ import { Images } from '../../Constants';
 import { useInset } from '../../Hooks';
 
 const DrawerContent = ({ navigation }) => {
-  const [State, setState] = useState({ selectedIndex: 0 });
+  const [State, setState] = useState({
+    selectedIndex: DummyData.drawerScreens[0],
+  });
   const styles = useStyles({});
 
-  const onItemPress = index => {
-    setState(p => ({ ...p, selectedIndex: index }));
+  const onItemPress = (item, index) => {
+    setState(p => ({ ...p, selectedIndex: item }));
     setTimeout(() => {
+      item.navigate && navigation.navigate(item.navigate);
       navigation.closeDrawer();
-    }, 500);
+    }, 100);
   };
 
   return (
@@ -35,7 +38,7 @@ const DrawerContent = ({ navigation }) => {
           <RenderItems
             item={item}
             index={index}
-            isSelected={State.selectedIndex === index}
+            isSelected={State.selectedIndex?.name === item.name}
             onItemPress={onItemPress}
           />
         )}
@@ -50,7 +53,7 @@ const RenderItems = ({ item, index, isSelected, onItemPress }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
-      onPress={() => onItemPress?.(index)}
+      onPress={() => onItemPress?.(item, index)}
       style={styles.renderContainer}>
       {isSelected && (
         <View style={styles.gradientOverlay}>

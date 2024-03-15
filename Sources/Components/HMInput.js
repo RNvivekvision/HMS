@@ -4,29 +4,29 @@ import { RNInput, RNStyles, RNText, RNIcon } from '../Common';
 import { Colors, hp, wp } from '../Theme';
 
 const HMInput = forwardRef(
-  ({ title, icon, onIconPress, error, ...rest }, ref) => {
+  ({ title, icon, onIconPress, error, containerStyle, ...rest }, ref) => {
     const styles = useStyles({ error });
-
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         {title && <RNText style={styles.title}>{title}</RNText>}
-        <View style={styles.inputContainer}>
-          <RNInput
-            ref={ref}
-            placeholderTextColor={error ? Colors.Error : Colors.Placeholder}
-            style={styles.input}
-            {...rest}
-          />
-
-          {icon && (
-            <RNIcon
-              icon={icon}
-              iconStyle={styles.icon}
-              onPress={onIconPress}
-              containerStyle={styles.IconContainer}
+        {
+          <View style={styles.inputContainer}>
+            <RNInput
+              ref={ref}
+              placeholderTextColor={error ? Colors.Error : Colors.Placeholder}
+              style={styles.input}
+              {...rest}
             />
-          )}
-        </View>
+            {icon && (
+              <RNIcon
+                icon={icon}
+                iconStyle={styles.icon}
+                onPress={onIconPress}
+                containerStyle={styles.IconContainer}
+              />
+            )}
+          </View>
+        }
       </View>
     );
   },
@@ -42,7 +42,7 @@ const useStyles = ({ error }) => {
     },
     inputContainer: {
       ...RNStyles.flexRow,
-      backgroundColor: error ? Colors.Error : Colors.PlaceholderBackground,
+      backgroundColor: Colors.PlaceholderBackground,
       paddingHorizontal: wp(4),
       paddingVertical: hp(0.7),
       borderRadius: wp(3),

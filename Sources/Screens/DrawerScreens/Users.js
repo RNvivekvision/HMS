@@ -1,25 +1,18 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNBottomSheet, RNStyles, RNText } from '../Common';
+import { RNBottomSheet, RNStyles, RNText } from '../../Common';
 import {
   HMHeader,
   HMList,
   HMSearchFilter,
-  HomeFilterContent,
-} from '../Components';
-import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { DummyData } from '../Utils';
-import { NavRoutes } from '../Navigation';
+  UserFilter,
+} from '../../Components';
+import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
+import { DummyData, Functions } from '../../Utils';
+import { NavRoutes } from '../../Navigation';
 
-const Home = ({ navigation }) => {
+const Users = ({ navigation }) => {
   const ref = useRef();
-
-  const vStackData = useMemo(() => {
-    const half = Math.floor(DummyData.LatestNewUsers.length / 2);
-    const firstHalfData = DummyData.LatestNewUsers?.slice(0, half);
-    const secondHalfData = DummyData.LatestNewUsers?.slice(half);
-    return [firstHalfData, secondHalfData];
-  }, [DummyData.LatestNewUsers]);
 
   return (
     <View style={RNStyles.container}>
@@ -41,7 +34,7 @@ const Home = ({ navigation }) => {
         />
 
         <HMList
-          data={vStackData}
+          data={Functions.spliteArray(DummyData.LatestNewUsers)}
           vStack={true}
           title={'All User List'}
           titleChildrenText={'All user'}
@@ -49,7 +42,7 @@ const Home = ({ navigation }) => {
       </HMHeader>
 
       <RNBottomSheet ref={ref}>
-        <HomeFilterContent ref={ref} />
+        <UserFilter ref={ref} />
       </RNBottomSheet>
     </View>
   );
@@ -64,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Users;

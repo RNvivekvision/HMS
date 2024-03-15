@@ -31,6 +31,11 @@ const Images = {
   Delete: require(ImagePath + 'Delete' + png),
   Cross: require(ImagePath + 'Cross' + png),
   Reset: require(ImagePath + 'Reset' + png),
+  Copy: require(ImagePath + 'Copy' + png),
+  Calendar: require(ImagePath + 'Calendar' + png),
+  Document: require(ImagePath + 'Document' + png),
+  ArrowUp: require(ImagePath + 'ArrowUp' + png),
+  Printer: require(ImagePath + 'Printer' + png),
 
   Dummy_user1: require(ImagePath + 'Dummy_user1' + png),
 };

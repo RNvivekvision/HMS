@@ -27,12 +27,20 @@ const ToPercentage = ({ value, total }) => {
   return Percentage > 100 ? 100 : Percentage;
 };
 
+const spliteArray = arr => {
+  const half = Math.floor(arr.length / 2);
+  const firstHalfData = arr.slice(0, half);
+  const secondHalfData = arr.slice(half);
+  return [firstHalfData, secondHalfData];
+};
+
 const Functions = {
   ALERT,
   OpenUrl,
   setAppData,
   getAppData,
   ToPercentage,
+  spliteArray,
 };
 
 export default Functions;

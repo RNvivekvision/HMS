@@ -61,7 +61,7 @@ const HMSearchEntity = () => {
 
       <HMDropDown
         placeholder={'Please select'}
-        data={DummyData.HomeFilterDropDown.Entities}
+        data={DummyData.ProductFilterDropDown.Entities}
         dropdownStyle={styles.dropdownStyle}
         renderLeftIcon={() => (
           <RNImage source={Images.Search} style={styles.searchIcon} />

@@ -6,6 +6,7 @@ import { NavConfigs, NavRoutes } from './index';
 import Drawer from './Drawer';
 import {
   AddNewUser,
+  BusinessDetail,
   EditProfile,
   ForgotPassword,
   Login,
@@ -18,7 +19,9 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
   useEffect(() => {
-    SplashScreen.hide();
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
   }, []);
 
   return (
@@ -41,6 +44,10 @@ const Routes = () => {
         <Stack.Screen name={NavRoutes.UserProfile} component={UserProfile} />
         <Stack.Screen name={NavRoutes.AddNewUser} component={AddNewUser} />
         <Stack.Screen name={NavRoutes.EditProfile} component={EditProfile} />
+        <Stack.Screen
+          name={NavRoutes.BusinessDetail}
+          component={BusinessDetail}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,14 +1,22 @@
 import { Images } from '../Constants';
+import { NavRoutes } from '../Navigation';
 
 const DummyData = {
   drawerScreens: [
     {
+      name: 'Users',
+      icon: Images.Products,
+      navigate: NavRoutes.Users,
+    },
+    {
       name: 'Products',
       icon: Images.Products,
+      navigate: NavRoutes.Products,
     },
     {
       name: 'Businesses',
       icon: Images.Businesses,
+      navigate: NavRoutes.Business,
     },
     {
       name: 'Contracts',
@@ -109,7 +117,7 @@ const DummyData = {
       isLive: false,
     },
   ],
-  HomeFilterDropDown: {
+  ProductFilterDropDown: {
     UserRights: [
       { label: 'User Right 1', value: 'User Right 1' },
       { label: 'User Right 2', value: 'User Right 2' },
@@ -218,6 +226,254 @@ const DummyData = {
       title: 'Ops Admin',
     },
   ],
+  Business: {
+    LatestBusinessList: [
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+      {
+        name: 'RIL/Banpu 2024',
+        number: 'B752',
+      },
+    ],
+    AllBusinessList: [
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+      {
+        name: 'RIL/Banpi 2024',
+        number: 'Mo.no: (480) 555-0103',
+      },
+    ],
+    BusinessDetails: [
+      {
+        title: 'Finance',
+        data: [
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: true,
+          },
+          {
+            pic: Images.Dummy_user1,
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+          {
+            pic: Images.Dummy_user1,
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: true,
+          },
+          {
+            title: 'AAr',
+            isDark: true,
+          },
+          {
+            pic: Images.Dummy_user1,
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+        ],
+      },
+      {
+        title: 'Opration',
+        data: [
+          {
+            title: 'AAr',
+            isDark: true,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+          {
+            pic: Images.Dummy_user1,
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+          {
+            pic: Images.Dummy_user1,
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: true,
+          },
+          {
+            title: 'AAr',
+            isDark: true,
+          },
+          {
+            pic: Images.Dummy_user1,
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+          {
+            title: 'AAr',
+            isDark: false,
+          },
+        ],
+      },
+    ],
+    EmployeeDetails: [
+      {
+        title: 'Contracts',
+        data: [
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+        ],
+      },
+      {
+        title: 'Deliveries',
+        data: [
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+        ],
+      },
+      {
+        title: 'Outgoing Invocies',
+        data: [
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+        ],
+      },
+      {
+        title: 'Incoming Invoices',
+        data: [
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+          {
+            id: 'C409',
+            partner: 'PT. Bharinto Ekatama PT',
+            quantity: '400.000',
+            price: 'ICI5000 3,00 USD',
+            delivery: 'Jan - Apr 2024',
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export default DummyData;

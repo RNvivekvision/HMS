@@ -1,11 +1,11 @@
 import React, { forwardRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNButton, RNStyles } from '../Common';
-import { HMDropDown, HMFilterTitle } from './index';
-import { DummyData } from '../Utils';
-import { hp, wp } from '../Theme';
+import { RNButton, RNStyles } from '../../Common';
+import { HMDropDown, HMFilterTitle } from '../index';
+import { DummyData } from '../../Utils';
+import { hp, wp } from '../../Theme';
 
-const HomeFilterContent = forwardRef(({}, ref) => {
+const UserFilter = forwardRef(({}, ref) => {
   const [State, setState] = useState({
     userRight: null,
     entities: null,
@@ -22,28 +22,28 @@ const HomeFilterContent = forwardRef(({}, ref) => {
       <View style={styles.dropdownContainer}>
         <HMDropDown
           title={'User Rights'}
-          data={DummyData.HomeFilterDropDown.UserRights}
+          data={DummyData.ProductFilterDropDown.UserRights}
           placeholder={'Please Select'}
           onChange={value => setState(p => ({ ...p, userRight: value }))}
           value={State.userRight}
         />
         <HMDropDown
           title={'Entities'}
-          data={DummyData.HomeFilterDropDown.Entities}
+          data={DummyData.ProductFilterDropDown.Entities}
           placeholder={'Please Select'}
           onChange={value => setState(p => ({ ...p, entities: value }))}
           value={State.entities}
         />
         <HMDropDown
           title={'Short Name'}
-          data={DummyData.HomeFilterDropDown.ShortName}
+          data={DummyData.ProductFilterDropDown.ShortName}
           placeholder={'Please Select'}
           onChange={value => setState(p => ({ ...p, shortName: value }))}
           value={State.shortName}
         />
         <HMDropDown
           title={'User Name'}
-          data={DummyData.HomeFilterDropDown.UserName}
+          data={DummyData.ProductFilterDropDown.UserName}
           placeholder={'Please Select'}
           position={'top'}
           onChange={value => setState(p => ({ ...p, userName: value }))}
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeFilterContent;
+export default UserFilter;

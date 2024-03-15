@@ -9,12 +9,18 @@ const VStack = ({ item }) => {
 
   return (
     <View style={styles.renderContainer}>
-      <View style={styles.profilePicContainer}>
-        {item?.isLive && <View style={styles.live} />}
-        <RNImage source={item.profilePic} style={styles.profilePic} />
-      </View>
+      {item.profilePic && (
+        <View style={styles.profilePicContainer}>
+          {item?.isLive && <View style={styles.live} />}
+          <RNImage source={item.profilePic} style={styles.profilePic} />
+        </View>
+      )}
       <RNText style={styles.name}>{item.name}</RNText>
-      <RNText size={FontSize.font8}>{item.number}</RNText>
+      <View style={RNStyles.flexRow}>
+        <RNText size={FontSize.font8}>{item.number}</RNText>
+        <RNIcon icon={Images.Copy} containerStyle={styles.copyIcon} />
+      </View>
+      {/* <RNText size={FontSize.font8}>{item.number}</RNText> */}
       <RNButton
         title={'View Profile'}
         textStyle={{ fontSize: FontSize.font10 }}
@@ -97,6 +103,10 @@ const useStyles = () => {
       paddingHorizontal: wp(2),
       paddingVertical: hp(0.8),
       borderRadius: wp(2),
+    },
+    copyIcon: {
+      width: wp(3),
+      height: wp(3),
     },
   });
 };

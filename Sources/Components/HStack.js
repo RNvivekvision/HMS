@@ -4,18 +4,23 @@ import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNButton, RNIcon, RNImage, RNStyles, RNText } from '../Common';
 import { Images } from '../Constants';
 
-const HStack = ({ item }) => {
+const HStack = ({ item, onViewProfilePress, onEditPress, onDeletePress }) => {
   const styles = useStyles();
 
   return (
     <View style={styles.renderContainer}>
       <View style={styles.renderContent}>
-        <RNImage source={item.profilePic} style={styles.profilePic} />
-        <View style={styles.nameContainer}>
+        {item.profilePic && (
+          <RNImage source={item.profilePic} style={styles.profilePic} />
+        )}
+        <View style={{ flex: 1 }}>
           <RNText numOfLines={1} style={styles.name}>
             {item.name}
           </RNText>
-          <RNText size={FontSize.font8}>{item.number}</RNText>
+          <View style={RNStyles.flexRow}>
+            <RNText size={FontSize.font8}>{item.number}</RNText>
+            <RNIcon icon={Images.Copy} containerStyle={styles.copyIcon} />
+          </View>
         </View>
       </View>
       <View style={styles.renderButtons}>
@@ -23,16 +28,19 @@ const HStack = ({ item }) => {
           title={'View Profile'}
           textStyle={{ fontSize: FontSize.font12 }}
           style={styles.viewProfile}
+          onPress={onViewProfilePress}
         />
         <View style={RNStyles.flexRow}>
           <RNIcon
             icon={Images.Edit}
             iconStyle={RNStyles.image60}
             containerStyle={styles.iconContainer}
+            onPress={onEditPress}
           />
           <RNIcon
             icon={Images.Delete}
             iconStyle={RNStyles.image60}
+            onPress={onDeletePress}
             containerStyle={[
               styles.iconContainer,
               { backgroundColor: Colors.Delete + '15' },
@@ -62,9 +70,9 @@ const useStyles = () => {
       paddingTop: hp(2),
       paddingBottom: hp(0.5),
     },
-    nameContainer: {
-      paddingLeft: wp(2),
-      flex: 1,
+    copyIcon: {
+      width: wp(3),
+      height: wp(3),
     },
     name: {
       fontSize: FontSize.font12,
@@ -77,6 +85,7 @@ const useStyles = () => {
       borderRadius: 100,
       borderWidth: 1,
       borderColor: Colors.Black + '30',
+      marginRight: wp(2),
     },
     renderButtons: {
       ...RNStyles.flexRowBetween,

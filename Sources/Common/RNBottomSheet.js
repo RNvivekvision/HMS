@@ -8,8 +8,8 @@ import {
 import { wp } from '../Theme';
 import RNStyles from './RNStyles';
 
-const RNBottomSheet = forwardRef(({ children }, ref) => {
-  const snapPoints = useMemo(() => ['70%', '80%'], []);
+const RNBottomSheet = forwardRef(({ children, snapPoints }, ref) => {
+  const points = useMemo(() => ['70%', '80%'], []);
 
   return (
     <BottomSheetModalProvider>
@@ -19,7 +19,7 @@ const RNBottomSheet = forwardRef(({ children }, ref) => {
         containerStyle={{ backgroundColor: '#00000050' }}
         style={styles.radius}
         handleComponent={null}
-        snapPoints={snapPoints}>
+        snapPoints={snapPoints ?? points}>
         <BottomSheetView style={styles.radius}>{children}</BottomSheetView>
       </BottomSheetModal>
     </BottomSheetModalProvider>
