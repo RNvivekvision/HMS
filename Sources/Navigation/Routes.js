@@ -10,12 +10,14 @@ import {
   EditProfile,
   ForgotPassword,
   Login,
+  MineDetail,
+  ProductDetail,
   ResetPassword,
   UserProfile,
   VerifyCode,
 } from '../Screens';
 
-const Stack = createStackNavigator();
+const { Navigator, Screen } = createStackNavigator();
 
 const Routes = () => {
   useEffect(() => {
@@ -26,29 +28,20 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={NavConfigs.screenOptions}>
-        {/* Authentication */}
-        <Stack.Screen name={NavRoutes.Login} component={Login} />
-        <Stack.Screen
-          name={NavRoutes.ForgotPassword}
-          component={ForgotPassword}
-        />
-        <Stack.Screen name={NavRoutes.VerifyCode} component={VerifyCode} />
-        <Stack.Screen
-          name={NavRoutes.ResetPassword}
-          component={ResetPassword}
-        />
+      <Navigator screenOptions={NavConfigs.screenOptions}>
+        <Screen name={NavRoutes.Login} component={Login} />
+        <Screen name={NavRoutes.ForgotPassword} component={ForgotPassword} />
+        <Screen name={NavRoutes.VerifyCode} component={VerifyCode} />
+        <Screen name={NavRoutes.ResetPassword} component={ResetPassword} />
 
-        {/* Application */}
-        <Stack.Screen name={NavRoutes.Drawer} component={Drawer} />
-        <Stack.Screen name={NavRoutes.UserProfile} component={UserProfile} />
-        <Stack.Screen name={NavRoutes.AddNewUser} component={AddNewUser} />
-        <Stack.Screen name={NavRoutes.EditProfile} component={EditProfile} />
-        <Stack.Screen
-          name={NavRoutes.BusinessDetail}
-          component={BusinessDetail}
-        />
-      </Stack.Navigator>
+        <Screen name={NavRoutes.Drawer} component={Drawer} />
+        <Screen name={NavRoutes.UserProfile} component={UserProfile} />
+        <Screen name={NavRoutes.AddNewUser} component={AddNewUser} />
+        <Screen name={NavRoutes.EditProfile} component={EditProfile} />
+        <Screen name={NavRoutes.BusinessDetail} component={BusinessDetail} />
+        <Screen name={NavRoutes.ProductDetail} component={ProductDetail} />
+        <Screen name={NavRoutes.MineDetail} component={MineDetail} />
+      </Navigator>
     </NavigationContainer>
   );
 };

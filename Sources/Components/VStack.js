@@ -4,7 +4,13 @@ import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNButton, RNIcon, RNImage, RNStyles, RNText } from '../Common';
 import { Images } from '../Constants';
 
-const VStack = ({ item }) => {
+const VStack = ({
+  item,
+  viewText,
+  onViewProfilePress,
+  onEditPress,
+  onDeletePress,
+}) => {
   const styles = useStyles();
 
   return (
@@ -22,15 +28,17 @@ const VStack = ({ item }) => {
       </View>
       {/* <RNText size={FontSize.font8}>{item.number}</RNText> */}
       <RNButton
-        title={'View Profile'}
+        title={viewText || 'View Profile'}
         textStyle={{ fontSize: FontSize.font10 }}
         style={styles.viewProfile}
+        onPress={onViewProfilePress}
       />
       <View style={RNStyles.flexRow}>
         <RNIcon
           icon={Images.Edit}
           iconStyle={RNStyles.image60}
           containerStyle={styles.iconContainer}
+          onPress={onEditPress}
         />
         <RNIcon
           icon={Images.Delete}
@@ -39,6 +47,7 @@ const VStack = ({ item }) => {
             styles.iconContainer,
             { backgroundColor: Colors.Delete + '15' },
           ]}
+          onPress={onDeletePress}
         />
       </View>
     </View>

@@ -13,6 +13,7 @@ const RNHeader = ({
   titleStyle,
   children,
   style,
+  footer,
 }) => {
   const navigation = useNavigation();
   const styles = useStyles();
@@ -32,6 +33,8 @@ const RNHeader = ({
       <RNScrollView style={style} scrollProps={scrollProps}>
         {children}
       </RNScrollView>
+
+      {footer && <View style={styles.footer}>{footer}</View>}
     </View>
   );
 };
@@ -41,9 +44,8 @@ const useStyles = () => {
   const inset = useInset();
 
   return StyleSheet.create({
-    contentContainerStyle: {
-      paddingBottom: inset.bottom + hp(2),
-      paddingVertical: hp(2),
+    footer: {
+      paddingBottom: inset.bottom,
     },
     Container: {
       ...RNStyles.flexRow,

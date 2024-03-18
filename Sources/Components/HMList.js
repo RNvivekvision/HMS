@@ -21,6 +21,7 @@ const HMList = ({
   horizontal,
   contentContainerStyle,
   renderItem,
+  viewText,
   onViewProfilePress,
   onEditPress,
   onDeletePress,
@@ -47,6 +48,7 @@ const HMList = ({
                 <VStack
                   key={i}
                   item={v}
+                  viewText={viewText}
                   onViewProfilePress={onViewProfilePress}
                   onEditPress={onEditPress}
                   onDeletePress={onDeletePress}
@@ -58,6 +60,7 @@ const HMList = ({
                 <VStack
                   key={i}
                   item={v}
+                  viewText={viewText}
                   onViewProfilePress={onViewProfilePress}
                   onEditPress={onEditPress}
                   onDeletePress={onDeletePress}
@@ -82,6 +85,7 @@ const HMList = ({
             ) : (
               <HStack
                 item={item}
+                viewText={viewText}
                 onViewProfilePress={onViewProfilePress}
                 onEditPress={onEditPress}
                 onDeletePress={onDeletePress}

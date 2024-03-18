@@ -11,9 +11,17 @@ import HMEntity from './HMEntity';
 import HMSearchEntity from './HMSearchEntity';
 import HMEmployee from './HMEmployee';
 import HMEmployeeDetails from './HMEmployeeDetails';
+import HMProduct from './HMProduct';
+import HMAlert from './HMAlert';
+import HMDelete from './HMDelete';
 
 export { UserFilter, BusinessFilter, ProductFilter } from './Filter';
-export { Archive, UploadFile, NewBusiness } from './BusinessDetails';
+export {
+  Archive,
+  UploadFile,
+  NewBusiness,
+  EmployeeDetail,
+} from './BusinessDetails';
 
 export {
   HMInput,
@@ -29,4 +37,7 @@ export {
   HMEntity,
   HMSearchEntity,
   HMEmployee,
+  HMProduct,
+  HMAlert,
+  HMDelete,
 };

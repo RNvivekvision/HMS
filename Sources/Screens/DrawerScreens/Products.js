@@ -20,10 +20,7 @@ const Products = ({ navigation }) => {
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
         <RNText style={styles.title}>{'Product list'}</RNText>
 
-        <HMSearchFilter
-          placeholder={'Search here'}
-          onFilterPress={() => ref.current?.present()}
-        />
+        <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <RNButton
           title={'Mine/Pit'}
@@ -32,15 +29,23 @@ const Products = ({ navigation }) => {
         />
 
         <HMList
-          data={DummyData.Business.LatestBusinessList}
           title={'Latest Product List'}
+          data={DummyData.Business.LatestBusinessList}
+          viewText={'View Product'}
+          onViewProfilePress={() =>
+            navigation.navigate(NavRoutes.ProductDetail)
+          }
         />
 
         <HMList
-          data={Functions.spliteArray(DummyData.Business.AllBusinessList)}
           vStack={true}
           title={'All Product List'}
           titleChildrenText={'All Product'}
+          data={Functions.spliteArray(DummyData.Business.AllBusinessList)}
+          viewText={'View Product'}
+          onViewProfilePress={() =>
+            navigation.navigate(NavRoutes.ProductDetail)
+          }
         />
       </HMHeader>
 

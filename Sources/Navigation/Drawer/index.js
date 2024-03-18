@@ -3,20 +3,21 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import NavRoutes from '../NavRoutes';
 import NavConfigs from '../NavConfigs';
 import DrawerContent from './DrawerContent';
-import { Business, Products, Users } from '../../Screens';
+import { Users, Products, Business, Mine } from '../../Screens';
 
-const Drawer = createDrawerNavigator();
+const { Navigator, Screen } = createDrawerNavigator();
 
-const Index = () => {
+const Drawer = () => {
   return (
-    <Drawer.Navigator
+    <Navigator
       screenOptions={NavConfigs.drawerOptions}
       drawerContent={p => <DrawerContent {...p} />}>
-      <Drawer.Screen name={NavRoutes.Users} component={Users} />
-      <Drawer.Screen name={NavRoutes.Business} component={Business} />
-      <Drawer.Screen name={NavRoutes.Products} component={Products} />
-    </Drawer.Navigator>
+      <Screen name={NavRoutes.Users} component={Users} />
+      <Screen name={NavRoutes.Products} component={Products} />
+      <Screen name={NavRoutes.Business} component={Business} />
+      <Screen name={NavRoutes.Mine} component={Mine} />
+    </Navigator>
   );
 };
 
-export default Index;
+export default Drawer;

@@ -1,8 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNBottomSheet, RNStyles, RNText } from '../../Common';
 import {
+  HMAlert,
+  HMDelete,
   HMHeader,
+  HMInput,
   HMList,
   HMSearchFilter,
   UserFilter,
@@ -13,17 +16,40 @@ import { NavRoutes } from '../../Navigation';
 
 const Users = ({ navigation }) => {
   const ref = useRef();
+  const [State, setState] = useState({ showEdit: false, showDelete: false });
 
   return (
     <View style={RNStyles.container}>
+      <HMDelete
+        visible={State.showDelete}
+        title={'Storage Admin User Rights'}
+        text={'Are sure you want to delete storage admin user?'}
+        onClose={() => setState(p => ({ ...p, showDelete: false }))}
+        buttonProps={{
+          onPress: () => setState(p => ({ ...p, showDelete: false })),
+        }}
+      />
+
+      <HMAlert
+        visible={State.showEdit}
+        onClose={() => setState(p => ({ ...p, showEdit: false }))}
+        title={'Add New User'}
+        buttontext={'Add'}
+        buttonProps={{
+          onPress: () => setState(p => ({ ...p, showEdit: false })),
+        }}>
+        <HMInput
+          title={'Entitie Name'}
+          placeholder={'Entitie Name'}
+          containerStyle={{ paddingTop: 0 }}
+        />
+      </HMAlert>
+
       <HMHeader
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
         <RNText style={styles.title}>{'User list'}</RNText>
 
-        <HMSearchFilter
-          placeholder={'Search here'}
-          onFilterPress={() => ref.current?.present()}
-        />
+        <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <HMList
           data={DummyData.LatestNewUsers}
@@ -31,6 +57,8 @@ const Users = ({ navigation }) => {
           titleChildrenText={'+ Add New User'}
           titleChildrenStyle={{ color: Colors.Button }}
           ontitleChildrenPress={() => navigation.navigate(NavRoutes.AddNewUser)}
+          onEditPress={() => setState(p => ({ ...p, showEdit: true }))}
+          onDeletePress={() => setState(p => ({ ...p, showDelete: true }))}
         />
 
         <HMList
@@ -38,6 +66,8 @@ const Users = ({ navigation }) => {
           vStack={true}
           title={'All User List'}
           titleChildrenText={'All user'}
+          onEditPress={() => setState(p => ({ ...p, showEdit: true }))}
+          onDeletePress={() => setState(p => ({ ...p, showDelete: true }))}
         />
       </HMHeader>
 

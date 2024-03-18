@@ -20,14 +20,12 @@ const Business = ({ navigation }) => {
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
         <RNText style={styles.title}>{'Business List'}</RNText>
 
-        <HMSearchFilter
-          placeholder={'Search here'}
-          onFilterPress={() => ref.current?.present()}
-        />
+        <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <HMList
           data={DummyData.Business.LatestBusinessList}
           title={'Latest Business List'}
+          viewText={'View Business'}
           onViewProfilePress={() =>
             navigation.navigate(NavRoutes.BusinessDetail)
           }
@@ -36,13 +34,12 @@ const Business = ({ navigation }) => {
         <HMList
           data={Functions.spliteArray(DummyData.Business.AllBusinessList)}
           vStack={true}
+          viewText={'View Business'}
           title={'All Business List'}
           titleChildrenText={'All Business'}
-          // The following is not working...
-          // find out what is the issue...
-          // onViewProfilePress={() =>
-          //   navigation.navigate(NavRoutes.BusinessDetail)
-          // }
+          onViewProfilePress={() =>
+            navigation.navigate(NavRoutes.BusinessDetail)
+          }
         />
       </HMHeader>
 

@@ -4,7 +4,13 @@ import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNButton, RNIcon, RNImage, RNStyles, RNText } from '../Common';
 import { Images } from '../Constants';
 
-const HStack = ({ item, onViewProfilePress, onEditPress, onDeletePress }) => {
+const HStack = ({
+  item,
+  viewText,
+  onViewProfilePress,
+  onEditPress,
+  onDeletePress,
+}) => {
   const styles = useStyles();
 
   return (
@@ -25,8 +31,8 @@ const HStack = ({ item, onViewProfilePress, onEditPress, onDeletePress }) => {
       </View>
       <View style={styles.renderButtons}>
         <RNButton
-          title={'View Profile'}
-          textStyle={{ fontSize: FontSize.font12 }}
+          title={viewText || 'View Profile'}
+          textStyle={{ fontSize: FontSize.font10 }}
           style={styles.viewProfile}
           onPress={onViewProfilePress}
         />

@@ -29,6 +29,7 @@ const HMSearchFilter = forwardRef(
             ref={ref}
             placeholderTextColor={Colors.Placeholder}
             style={styles.input}
+            placeholder={'Search here'}
             {...rest}
           />
         </View>

@@ -10,6 +10,7 @@ import {
   Archive,
   UploadFile,
   NewBusiness,
+  EmployeeDetail,
 } from '../Components';
 import { DummyData } from '../Utils';
 import { Images } from '../Constants';
@@ -22,7 +23,6 @@ const BusinessDetail = ({ navigation }) => {
   return (
     <RNHeader style={{ paddingHorizontal: wp(4) }} title={'B752 - Ril/Banpu'}>
       <HMSearchFilter
-        placeholder={'Search here'}
         containerStyle={{ paddingHorizontal: 0 }}
         onFilterPress={() => {}}
       />
@@ -71,7 +71,7 @@ const BusinessDetail = ({ navigation }) => {
 
       <UploadFile />
 
-      <View style={styles.employeeDetail}>
+      {/* <View style={styles.employeeDetail}>
         <View style={RNStyles.flexRow}>
           <RNText size={FontSize.font12} color={Colors.Placeholder}>
             {'Employee Name : '}
@@ -115,7 +115,9 @@ const BusinessDetail = ({ navigation }) => {
             />
           </View>
         </View>
-      </View>
+      </View> */}
+
+      <EmployeeDetail />
 
       {DummyData.Business.EmployeeDetails.map((v, i) => (
         <HMEmployeeDetails key={i} item={v} />

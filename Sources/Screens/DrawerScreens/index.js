@@ -1,4 +1,5 @@
 import Users from './Users';
-import Business from './Business';
 import Products from './Products';
-export { Users, Business, Products };
+import Business from './Business';
+import Mine from './Mine';
+export { Users, Business, Products, Mine };

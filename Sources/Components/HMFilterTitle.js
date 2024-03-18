@@ -4,9 +4,9 @@ import { RNText, RNStyles, RNIcon } from '../Common';
 import { Colors, FontFamily, wp } from '../Theme';
 import { Images } from '../Constants';
 
-const HMFilterTitle = ({ title, onClosePress }) => {
+const HMFilterTitle = ({ title, onClosePress, containerStyle }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <RNText family={FontFamily.Bold}>{title}</RNText>
       <RNIcon
         icon={Images.Cross}

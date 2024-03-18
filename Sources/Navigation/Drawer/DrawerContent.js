@@ -12,12 +12,12 @@ const DrawerContent = ({ navigation }) => {
   });
   const styles = useStyles({});
 
-  const onItemPress = (item, index) => {
+  const onItemPress = item => {
     setState(p => ({ ...p, selectedIndex: item }));
     setTimeout(() => {
       item.navigate && navigation.navigate(item.navigate);
       navigation.closeDrawer();
-    }, 100);
+    }, 50);
   };
 
   return (

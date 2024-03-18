@@ -32,6 +32,7 @@ const Images = {
   Cross: require(ImagePath + 'Cross' + png),
   Reset: require(ImagePath + 'Reset' + png),
   Copy: require(ImagePath + 'Copy' + png),
+  CopyProduct: require(ImagePath + 'CopyProduct' + png),
   Calendar: require(ImagePath + 'Calendar' + png),
   Document: require(ImagePath + 'Document' + png),
   ArrowUp: require(ImagePath + 'ArrowUp' + png),

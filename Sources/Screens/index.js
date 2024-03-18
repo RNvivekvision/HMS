@@ -6,8 +6,10 @@ import UserProfile from './UserProfile';
 import AddNewUser from './AddNewUser';
 import EditProfile from './EditProfile';
 import BusinessDetail from './BusinessDetail';
+import ProductDetail from './ProductDetail';
+import MineDetail from './MineDetail';
 
-import { Users, Business, Products } from './DrawerScreens';
+export { Users, Products, Business, Mine } from './DrawerScreens';
 
 export {
   Login,
@@ -17,8 +19,7 @@ export {
   UserProfile,
   AddNewUser,
   EditProfile,
-  Users,
-  Business,
-  Products,
   BusinessDetail,
+  ProductDetail,
+  MineDetail,
 };
