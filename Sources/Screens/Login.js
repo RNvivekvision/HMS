@@ -6,7 +6,7 @@ import { Colors, FontFamily, FontSize, hp } from '../Theme';
 import { Images } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const passwordRef = useRef();
   const [State, setState] = useState({
     email: '',
