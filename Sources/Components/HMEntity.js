@@ -16,7 +16,7 @@ const HMEntity = ({ data, title, containerStyle }) => {
         data.map((v, i) => (
           <View key={i} style={styles.renderEntityContainer}>
             <View style={RNStyles.container}>
-              <RNText family={FontFamily.SemiBold}>{v.title}</RNText>
+              <RNText family={FontFamily.Medium}>{v.title}</RNText>
               <RNText style={styles.renderEntityText}>{v.text}</RNText>
             </View>
             <View style={RNStyles.flexRow}>

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNInput, RNStyles, RNText, RNIcon } from '../Common';
-import { Colors, hp, wp } from '../Theme';
+import { Colors, FontSize, hp, wp } from '../Theme';
 
 const HMInput = forwardRef(
   ({ title, icon, onIconPress, error, containerStyle, ...rest }, ref) => {

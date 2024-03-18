@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: wp(3),
   },
   buttonText: {
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.SemiBold,
     color: Colors.White,
   },
   icon: {

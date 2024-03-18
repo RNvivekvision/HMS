@@ -11,7 +11,7 @@ const EmployeeDetail = () => {
         <RNText size={FontSize.font12} color={Colors.Placeholder}>
           {'Employee Name : '}
         </RNText>
-        <RNText size={FontSize.font12} family={FontFamily.Bold}>
+        <RNText size={FontSize.font12} family={FontFamily.SemiBold}>
           {'Alisa Alis (AAr)'}
         </RNText>
       </View>
@@ -19,7 +19,7 @@ const EmployeeDetail = () => {
         <RNText size={FontSize.font12} color={Colors.Placeholder}>
           {'Upload Date : '}
         </RNText>
-        <RNText size={FontSize.font12} family={FontFamily.Bold}>
+        <RNText size={FontSize.font12} family={FontFamily.SemiBold}>
           {'23.11.23  05:56 PM'}
         </RNText>
       </View>
@@ -27,7 +27,7 @@ const EmployeeDetail = () => {
         <RNText size={FontSize.font12} color={Colors.Placeholder}>
           {'Upload File : '}
         </RNText>
-        <RNText size={FontSize.font12} family={FontFamily.Bold}>
+        <RNText size={FontSize.font12} family={FontFamily.SemiBold}>
           {'Business File 1. PDF'}
         </RNText>
       </View>

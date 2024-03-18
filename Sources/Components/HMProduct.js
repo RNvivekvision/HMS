@@ -52,7 +52,7 @@ const Row = ({ title, text }) => {
         numOfLines={1}
         style={{ flex: 1 }}
         size={FontSize.font12}
-        family={FontFamily.Bold}>
+        family={FontFamily.SemiBold}>
         {text}
       </RNText>
     </View>

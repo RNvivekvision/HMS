@@ -88,7 +88,7 @@ const useStyles = ({ isSelected }) => {
     renderContainer: {
       ...RNStyles.flexRow,
       paddingVertical: hp(1.5),
-      paddingHorizontal: wp(8),
+      paddingHorizontal: wp(6),
     },
     icon: {
       width: wp(7),
@@ -97,7 +97,7 @@ const useStyles = ({ isSelected }) => {
     },
     name: {
       color: isSelected ? Colors.White : Colors.drawerInactive,
-      fontFamily: FontFamily.Bold,
+      fontFamily: FontFamily.SemiBold,
       paddingLeft: wp(4),
     },
     gradientOverlay: {

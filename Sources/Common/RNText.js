@@ -34,7 +34,7 @@ const RNText = ({
     paddingHorizontal: pHorizontal,
     paddingVertical: pVertical,
     textDecorationLine: textLine,
-    letterSpacing: spacing ?? 1,
+    letterSpacing: spacing,
   };
   return (
     <Text

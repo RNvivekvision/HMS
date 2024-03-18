@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import { RNHeader, RNIcon, RNStyles, RNText } from '../Common';
+import { RNHeader, RNStyles, RNText } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import {
   HMDropDown,
@@ -13,7 +13,6 @@ import {
   EmployeeDetail,
 } from '../Components';
 import { DummyData } from '../Utils';
-import { Images } from '../Constants';
 
 const BusinessDetail = ({ navigation }) => {
   const [State, setState] = useState({
@@ -71,52 +70,6 @@ const BusinessDetail = ({ navigation }) => {
 
       <UploadFile />
 
-      {/* <View style={styles.employeeDetail}>
-        <View style={RNStyles.flexRow}>
-          <RNText size={FontSize.font12} color={Colors.Placeholder}>
-            {'Employee Name : '}
-          </RNText>
-          <RNText size={FontSize.font12} family={FontFamily.Bold}>
-            {'Alisa Alis (AAr)'}
-          </RNText>
-        </View>
-        <View style={RNStyles.flexRow}>
-          <RNText size={FontSize.font12} color={Colors.Placeholder}>
-            {'Upload Date : '}
-          </RNText>
-          <RNText size={FontSize.font12} family={FontFamily.Bold}>
-            {'23.11.23  05:56 PM'}
-          </RNText>
-        </View>
-        <View style={RNStyles.flexRow}>
-          <RNText size={FontSize.font12} color={Colors.Placeholder}>
-            {'Upload File : '}
-          </RNText>
-          <RNText size={FontSize.font12} family={FontFamily.Bold}>
-            {'Business File 1. PDF'}
-          </RNText>
-        </View>
-
-        <View style={styles.employeeDetailIcon}>
-          <RNIcon icon={Images.Document} />
-          <View style={RNStyles.flexRow}>
-            <RNIcon
-              icon={Images.Edit}
-              iconStyle={RNStyles.image60}
-              containerStyle={styles.iconContainer}
-            />
-            <RNIcon
-              icon={Images.Delete}
-              iconStyle={RNStyles.image60}
-              containerStyle={[
-                styles.iconContainer,
-                { backgroundColor: Colors.Delete + '15' },
-              ]}
-            />
-          </View>
-        </View>
-      </View> */}
-
       <EmployeeDetail />
 
       {DummyData.Business.EmployeeDetails.map((v, i) => (
@@ -130,7 +83,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: FontSize.font18,
     paddingVertical: hp(2),
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.Medium,
   },
   box: {
     width: wp(4),
@@ -151,7 +104,7 @@ const styles = StyleSheet.create({
   },
   dropdownPlaceholderStyle: {
     fontSize: FontSize.font12,
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.SemiBold,
     color: Colors.White,
   },
   dropDownIconStyle: {

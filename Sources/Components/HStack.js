@@ -82,7 +82,7 @@ const useStyles = () => {
     },
     name: {
       fontSize: FontSize.font12,
-      fontFamily: FontFamily.Bold,
+      fontFamily: FontFamily.SemiBold,
       paddingBottom: hp(0.5),
     },
     profilePic: {

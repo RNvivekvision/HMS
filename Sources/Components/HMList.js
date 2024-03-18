@@ -32,7 +32,7 @@ const HMList = ({
   return (
     <View style={RNStyles.container}>
       <View style={styles.titleContainer}>
-        <RNText family={FontFamily.Bold}>{title ?? ''}</RNText>
+        <RNText family={FontFamily.SemiBold}>{title ?? ''}</RNText>
         <TouchableOpacity onPress={ontitleChildrenPress} activeOpacity={0.6}>
           <RNText style={[styles.addUser, titleChildrenStyle]}>
             {titleChildrenText ?? ''}

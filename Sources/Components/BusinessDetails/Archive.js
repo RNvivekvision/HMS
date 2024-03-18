@@ -15,9 +15,7 @@ const Archive = () => {
             activeOpacity={0.6}
             onPress={() => setState(p => ({ ...p, archive: v }))}
             style={styles.renderArchiveContainer}>
-            <RNText family={FontFamily.Medium} size={FontSize.font14}>
-              {v}
-            </RNText>
+            <RNText size={FontSize.font14}>{v}</RNText>
             <View
               style={[
                 styles.radioContainer,
@@ -31,7 +29,7 @@ const Archive = () => {
           </TouchableOpacity>
         ))}
       </View>
-      <RNText family={FontFamily.Bold} size={FontSize.font14}>
+      <RNText family={FontFamily.Medium} size={FontSize.font14}>
         {
           'Approx. 0% or 0 mt of 550.000 mt (0 out of 6) are currently performed.'
         }

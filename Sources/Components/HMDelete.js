@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     fontSize: FontSize.font18,
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.Medium,
     paddingVertical: hp(1),
     paddingHorizontal: wp(4),
   },

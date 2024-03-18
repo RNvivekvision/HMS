@@ -34,7 +34,7 @@ const UserProfile = ({ navigation }) => {
 
             <RNText
               pLeft={wp(2)}
-              family={FontFamily.Bold}
+              family={FontFamily.SemiBold}
               size={FontSize.font20}
               color={Colors.White}>
               {'User Profile'}
@@ -50,7 +50,11 @@ const UserProfile = ({ navigation }) => {
 
         <View style={{ alignItems: 'center' }}>
           <RNImage source={Images.Dummy_user1} style={styles.userImage} />
-          <RNText pBottom={hp(1)} size={FontSize.font18} color={Colors.White}>
+          <RNText
+            pBottom={hp(1)}
+            size={FontSize.font18}
+            family={FontFamily.Medium}
+            color={Colors.White}>
             {'Vana Starykova'}
           </RNText>
           <RNText pBottom={hp(3)} size={FontSize.font14} color={Colors.White}>
@@ -63,7 +67,7 @@ const UserProfile = ({ navigation }) => {
         <View style={styles.UserDetailsContainer}>
           {DummyData.UserProfile.UserDetail.map((v, i) => (
             <View key={i} style={styles.UserDetails}>
-              <RNText family={FontFamily.SemiBold}>{v.title}</RNText>
+              <RNText family={FontFamily.Medium}>{v.title}</RNText>
               <RNText style={styles.text}>{v.text}</RNText>
             </View>
           ))}

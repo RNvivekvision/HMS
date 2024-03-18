@@ -11,11 +11,12 @@ const ForgotPassword = ({ navigation }) => {
     <AuthHeader>
       <HMBack />
 
-      <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.Bold}>
+      <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.SemiBold}>
         {'Forgot Password?'}
       </RNText>
 
       <RNText
+        size={FontSize.font12}
         spacing={1}
         pVertical={hp(
           2,

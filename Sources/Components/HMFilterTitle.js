@@ -7,7 +7,7 @@ import { Images } from '../Constants';
 const HMFilterTitle = ({ title, onClosePress, containerStyle }) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      <RNText family={FontFamily.Bold}>{title}</RNText>
+      <RNText family={FontFamily.Medium}>{title}</RNText>
       <RNIcon
         icon={Images.Cross}
         iconStyle={styles.icon}

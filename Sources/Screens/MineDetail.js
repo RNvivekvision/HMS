@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: FontSize.font18,
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.Medium,
     paddingVertical: hp(2),
   },
   otherInfo: {

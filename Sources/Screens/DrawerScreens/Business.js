@@ -53,7 +53,7 @@ const Business = ({ navigation }) => {
 const styles = StyleSheet.create({
   title: {
     fontSize: FontSize.font20,
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.SemiBold,
     paddingHorizontal: wp(4),
     paddingVertical: hp(1),
   },

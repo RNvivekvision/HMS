@@ -26,7 +26,7 @@ const AddNewUser = ({ navigation }) => {
   return (
     <RNHeader style={{ paddingHorizontal: wp(4) }} title={'Add New User'}>
       <View style={RNStyles.flexRowBetween}>
-        <RNText size={FontSize.font18} family={FontFamily.SemiBold}>
+        <RNText size={FontSize.font18} family={FontFamily.Medium}>
           {'Add New User'}
         </RNText>
         <TouchableOpacity style={RNStyles.flexRow}>
@@ -49,7 +49,7 @@ const AddNewUser = ({ navigation }) => {
         value={State.language}
       />
 
-      <RNText size={FontSize.font18} pTop={hp(1)} family={FontFamily.SemiBold}>
+      <RNText size={FontSize.font18} pTop={hp(1)} family={FontFamily.Medium}>
         {'Security'}
       </RNText>
 
@@ -88,7 +88,7 @@ const AddNewUser = ({ navigation }) => {
         {'Profile Photo'}
       </RNText>
       <TouchableOpacity activeOpacity={0.6} style={styles.profilePicContainer}>
-        <RNText family={FontFamily.Bold} size={FontSize.font30}>
+        <RNText family={FontFamily.SemiBold} size={FontSize.font30}>
           {'PPs'}
         </RNText>
         <RNIcon
@@ -101,7 +101,7 @@ const AddNewUser = ({ navigation }) => {
       <RNText
         size={FontSize.font18}
         pVertical={hp(0.5)}
-        family={FontFamily.SemiBold}>
+        family={FontFamily.Medium}>
         {'Add Entities & Rights'}
       </RNText>
 

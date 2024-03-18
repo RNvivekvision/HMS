@@ -13,11 +13,12 @@ const VerifyCode = ({ navigation }) => {
     <AuthHeader>
       <HMBack />
 
-      <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.Bold}>
+      <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.SemiBold}>
         {'Verify Your Code'}
       </RNText>
 
       <RNText
+        size={FontSize.font12}
         spacing={1}
         pVertical={hp(
           2,
@@ -54,7 +55,7 @@ const otpTheme = {
   },
   pinCodeTextStyle: {
     fontSize: FontSize.font24,
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.SemiBold,
     color: Colors.Black,
   },
   focusStickStyle: {

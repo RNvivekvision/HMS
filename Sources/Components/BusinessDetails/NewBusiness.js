@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: FontSize.font18,
     paddingVertical: hp(2),
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.Medium,
   },
   blueWrapper: {
     backgroundColor: Colors.PlaceholderBackground,

@@ -23,7 +23,7 @@ const HMEmployee = ({ item }) => {
               {v?.title && (
                 <RNText
                   color={color}
-                  family={FontFamily.Bold}
+                  family={FontFamily.SemiBold}
                   size={FontSize.font12}>
                   {v?.title}
                 </RNText>

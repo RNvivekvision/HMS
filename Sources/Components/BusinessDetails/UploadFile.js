@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: FontSize.font18,
     paddingVertical: hp(2),
-    fontFamily: FontFamily.Bold,
+    fontFamily: FontFamily.Medium,
   },
   uploadFiles: {
     backgroundColor: Colors.Primary2,

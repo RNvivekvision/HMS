@@ -6,7 +6,7 @@ import { Colors, FontFamily, FontSize, hp } from '../Theme';
 import { Images } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
-const Login = ({ navigation }) => {
+const Login = () => {
   const passwordRef = useRef();
   const [State, setState] = useState({
     email: '',
@@ -16,11 +16,14 @@ const Login = ({ navigation }) => {
 
   return (
     <AuthHeader>
-      <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.Bold}>
+      <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.SemiBold}>
         {'Sign in to your account'}
       </RNText>
 
-      <RNText spacing={1} pVertical={hp(2)}>{`Let's get started`}</RNText>
+      <RNText
+        size={FontSize.font14}
+        spacing={1}
+        pVertical={hp(2)}>{`Let's get started`}</RNText>
 
       <RNDevider style={{ marginBottom: hp(1) }} />
 

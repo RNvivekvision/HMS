@@ -51,7 +51,7 @@ const HMSearchEntity = () => {
   return (
     <View style={styles.container}>
       <View style={RNStyles.flexRowBetween}>
-        <RNText family={FontFamily.SemiBold}>{'Search Entity'}</RNText>
+        <RNText family={FontFamily.Medium}>{'Search Entity'}</RNText>
         <RNIcon
           icon={Images.Cross}
           iconStyle={RNStyles.image50}
@@ -81,14 +81,15 @@ const HMSearchEntity = () => {
         )}
       />
 
-      <RNText pVertical={hp(1)} family={FontFamily.SemiBold}>
+      <RNText pVertical={hp(1)} family={FontFamily.Medium}>
         {'HMS AG'}
       </RNText>
 
       <View style={styles.RightsContainer}>
         <RNText size={FontSize.font14}>{'Select User Rights'}</RNText>
         {State.rights.map((v, i) => {
-          const color = i === 0 ? Colors.Button : Colors.Black;
+          const isFirst = i === 0;
+          const color = isFirst ? Colors.Button : Colors.Black;
           return (
             <TouchableOpacity
               key={i}
@@ -103,7 +104,11 @@ const HMSearchEntity = () => {
               ) : (
                 <View style={[styles.Box, { borderColor: color }]} />
               )}
-              <RNText size={FontSize.font14} pHorizontal={wp(2)} color={color}>
+              <RNText
+                family={isFirst ? FontFamily.Medium : FontFamily.Regular}
+                size={FontSize.font14}
+                pHorizontal={wp(2)}
+                color={color}>
                 {v.title}
               </RNText>
             </TouchableOpacity>
