@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { RNButton, RNIcon, RNImage, RNStyles, RNText } from '../Common';
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 
 const VStack = ({
   item,
@@ -28,7 +28,7 @@ const VStack = ({
       </View>
       {/* <RNText size={FontSize.font8}>{item.number}</RNText> */}
       <RNButton
-        title={viewText || 'View Profile'}
+        title={viewText || Strings.ViewProfile}
         textStyle={{ fontSize: FontSize.font10 }}
         style={styles.viewProfile}
         onPress={onViewProfilePress}

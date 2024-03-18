@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import { RNHeader, RNStyles, RNText } from '../Common';
-import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
+import { RNHeader, RNStyles, RNText } from '../../Common';
+import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import {
   HMDropDown,
   HMSearchFilter,
@@ -11,8 +11,9 @@ import {
   UploadFile,
   NewBusiness,
   EmployeeDetail,
-} from '../Components';
-import { DummyData } from '../Utils';
+} from '../../Components';
+import { DummyData } from '../../Utils';
+import { Strings } from '../../Constants';
 
 const BusinessDetail = ({ navigation }) => {
   const [State, setState] = useState({
@@ -26,7 +27,7 @@ const BusinessDetail = ({ navigation }) => {
         onFilterPress={() => {}}
       />
 
-      <RNText style={styles.title}>{'Responsible Employees'}</RNText>
+      <RNText style={styles.title}>{Strings.ResponsibleEmployees}</RNText>
       <View style={RNStyles.flexRowBetween}>
         <HMDropDown
           dropdownStyle={styles.entityDropdownStyle}
@@ -34,7 +35,7 @@ const BusinessDetail = ({ navigation }) => {
           dropDownIconStyle={styles.dropDownIconStyle}
           dropDownSelectedTextStyle={styles.dropdownPlaceholderStyle}
           data={DummyData.ProductFilterDropDown.Entities}
-          placeholder={'Select Entity'}
+          placeholder={Strings.SelectEntity}
           onChange={value => setState(p => ({ ...p, entity: value }))}
           value={State.entity}
         />
@@ -42,7 +43,7 @@ const BusinessDetail = ({ navigation }) => {
         <View>
           <View style={styles.selectedContainer}>
             <View style={[styles.box, { backgroundColor: Colors.Button }]} />
-            <RNText size={FontSize.font12}>{'Selected'}</RNText>
+            <RNText size={FontSize.font12}>{Strings.Selected}</RNText>
           </View>
           <View style={styles.selectedContainer}>
             <View
@@ -51,7 +52,7 @@ const BusinessDetail = ({ navigation }) => {
                 { backgroundColor: Colors.PlaceholderBackground },
               ]}
             />
-            <RNText size={FontSize.font12}>{'Not Selected'}</RNText>
+            <RNText size={FontSize.font12}>{Strings.NotSelected}</RNText>
           </View>
         </View>
       </View>

@@ -4,6 +4,7 @@ import { RNButton, RNStyles } from '../../Common';
 import { HMDropDown, HMFilterTitle } from '../index';
 import { DummyData } from '../../Utils';
 import { hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
 
 const BusinessFilter = forwardRef(({}, ref) => {
   const [State, setState] = useState({ userRight: null, entities: null });
@@ -11,27 +12,31 @@ const BusinessFilter = forwardRef(({}, ref) => {
 
   return (
     <View style={RNStyles.container}>
-      <HMFilterTitle title={'Filter'} onClosePress={closeSheet} />
+      <HMFilterTitle title={Strings.Filter} onClosePress={closeSheet} />
 
       <View style={styles.dropdownContainer}>
         <HMDropDown
-          title={'Discharge Country / Loading Country'}
+          title={Strings.DischargeCountryLoadingCountry}
           data={DummyData.UserProfile.Languages}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           onChange={value => setState(p => ({ ...p, userRight: value }))}
           value={State.userRight}
         />
         <HMDropDown
-          title={'Employee'}
+          title={Strings.Employee}
           data={DummyData.UserProfile.Languages}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           position={'top'}
           onChange={value => setState(p => ({ ...p, entities: value }))}
           value={State.entities}
         />
       </View>
 
-      <RNButton title={'Apply'} style={styles.button} onPress={closeSheet} />
+      <RNButton
+        title={Strings.Apply}
+        style={styles.button}
+        onPress={closeSheet}
+      />
     </View>
   );
 });

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNText, RNStyles } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
 
 const Archive = () => {
   const [State, setState] = useState({ archive: null });
@@ -9,30 +10,30 @@ const Archive = () => {
   return (
     <View style={RNStyles.container}>
       <View style={styles.archiveContainer}>
-        {['Archive', 'Commission', 'Principal'].map((v, i) => (
-          <TouchableOpacity
-            key={i}
-            activeOpacity={0.6}
-            onPress={() => setState(p => ({ ...p, archive: v }))}
-            style={styles.renderArchiveContainer}>
-            <RNText size={FontSize.font14}>{v}</RNText>
-            <View
-              style={[
-                styles.radioContainer,
-                {
-                  borderColor:
-                    State.archive === v ? Colors.Button : Colors.Black,
-                },
-              ]}>
-              {State.archive === v && <View style={styles.radio} />}
-            </View>
-          </TouchableOpacity>
-        ))}
+        {[Strings.Archive, Strings.Commission, Strings.Principal].map(
+          (v, i) => (
+            <TouchableOpacity
+              key={i}
+              activeOpacity={0.6}
+              onPress={() => setState(p => ({ ...p, archive: v }))}
+              style={styles.renderArchiveContainer}>
+              <RNText size={FontSize.font14}>{v}</RNText>
+              <View
+                style={[
+                  styles.radioContainer,
+                  {
+                    borderColor:
+                      State.archive === v ? Colors.Button : Colors.Black,
+                  },
+                ]}>
+                {State.archive === v && <View style={styles.radio} />}
+              </View>
+            </TouchableOpacity>
+          ),
+        )}
       </View>
       <RNText family={FontFamily.Medium} size={FontSize.font14}>
-        {
-          'Approx. 0% or 0 mt of 550.000 mt (0 out of 6) are currently performed.'
-        }
+        {Strings.ApproxDesc}
       </RNText>
     </View>
   );

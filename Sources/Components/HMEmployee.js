@@ -2,22 +2,20 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNText, RNStyles, RNImage } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
+import { Strings } from '../Constants';
 
 const HMEmployee = ({ item }) => {
   const is9Plus = item?.data?.length > 9;
   const data = is9Plus ? item?.data?.slice(0, 9) : item?.data;
-
   return (
     <View style={styles.container}>
       <RNText style={styles.title}>{item.title}</RNText>
-
       <View style={styles.content}>
         {data?.map((v, i) => {
           const bgcolor = v?.isDark
             ? Colors.Button
             : Colors.PlaceholderBackground;
           const color = v?.isDark ? Colors.White : Colors.Black;
-
           return (
             <View key={i} style={styles.renderContainer(bgcolor)}>
               {v?.title && (
@@ -33,7 +31,7 @@ const HMEmployee = ({ item }) => {
           );
         })}
         <TouchableOpacity style={styles.viewAll}>
-          <RNText style={styles.viewAllText}>{'View All'}</RNText>
+          <RNText style={styles.viewAllText}>{Strings.ViewAll}</RNText>
         </TouchableOpacity>
       </View>
     </View>

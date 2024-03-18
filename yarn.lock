@@ -5747,9 +5747,9 @@ react-is@^17.0.1:
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
 react-native-date-picker@^4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/react-native-date-picker/-/react-native-date-picker-4.4.1.tgz#68b8666040f25a257018f786ba31076f69a681b1"
-  integrity sha512-wlYQHIUQtdpG1t/geM87ga0iPaChiZvZaVnGXi7OWuzy3C1a096ETgXXUCQZDsdrYF9zuQ+AShJyPzdj92SdHQ==
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-date-picker/-/react-native-date-picker-4.4.2.tgz#f7bb9daa8559237e08bd30f907ee8487a6e2a6ec"
+  integrity sha512-wYKN8nYWhETVHJV/+Im30JOdzkFRwYRrDlEOyyYesOjt+1JTFJh9M7K5CqePLOIB4Nxlf2f2lRSI0VoUyFIovA==
 
 react-native-element-dropdown@^2.10.2:
   version "2.10.2"

@@ -9,7 +9,7 @@ import {
   RNText,
 } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 import { DummyData } from '../Utils';
 import { useInset } from '../Hooks';
 import { HMEntity } from '../Components';
@@ -37,7 +37,7 @@ const UserProfile = ({ navigation }) => {
               family={FontFamily.SemiBold}
               size={FontSize.font20}
               color={Colors.White}>
-              {'User Profile'}
+              {Strings.UserProfile}
             </RNText>
           </View>
 
@@ -76,7 +76,7 @@ const UserProfile = ({ navigation }) => {
         <HMEntity
           containerStyle={{ marginHorizontal: wp(4) }}
           data={DummyData.UserProfile.EntitiesAndRights}
-          title={'Entities & Rights'}
+          title={Strings.EntitiesandRights}
         />
       </RNScrollView>
     </View>

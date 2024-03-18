@@ -2,33 +2,33 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNIcon, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
-import { Images } from '../../Constants';
+import { Images, Strings } from '../../Constants';
 
 const EmployeeDetail = () => {
   return (
     <View style={styles.employeeDetail}>
       <View style={RNStyles.flexRow}>
         <RNText size={FontSize.font12} color={Colors.Placeholder}>
-          {'Employee Name : '}
+          {`${Strings.EmployeeName} : `}
         </RNText>
         <RNText size={FontSize.font12} family={FontFamily.SemiBold}>
-          {'Alisa Alis (AAr)'}
+          {`Alisa Alis (AAr)`}
         </RNText>
       </View>
       <View style={RNStyles.flexRow}>
         <RNText size={FontSize.font12} color={Colors.Placeholder}>
-          {'Upload Date : '}
+          {`${Strings.UploadDate} : `}
         </RNText>
         <RNText size={FontSize.font12} family={FontFamily.SemiBold}>
-          {'23.11.23  05:56 PM'}
+          {`23.11.23  05:56 PM`}
         </RNText>
       </View>
       <View style={RNStyles.flexRow}>
         <RNText size={FontSize.font12} color={Colors.Placeholder}>
-          {'Upload File : '}
+          {`${Strings.UploadFile} : `}
         </RNText>
         <RNText size={FontSize.font12} family={FontFamily.SemiBold}>
-          {'Business File 1. PDF'}
+          {`Business File 1. PDF`}
         </RNText>
       </View>
 

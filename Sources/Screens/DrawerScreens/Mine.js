@@ -5,6 +5,7 @@ import { HMHeader, HMList, HMSearchFilter } from '../../Components';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { DummyData, Functions } from '../../Utils';
 import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const Mine = ({ navigation }) => {
   const ref = useRef();
@@ -13,23 +14,23 @@ const Mine = ({ navigation }) => {
     <View style={RNStyles.container}>
       <HMHeader
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
-        <RNText style={styles.title}>{'Mine/Pit List'}</RNText>
+        <RNText style={styles.title}>{Strings.MinePitList}</RNText>
 
         <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <HMList
-          title={'Latest Mine/Pits List'}
+          title={Strings.LatestMinePitsList}
           data={DummyData.Business.LatestBusinessList}
-          viewText={'View Mine'}
+          viewText={Strings.ViewMine}
           onViewProfilePress={() => navigation.navigate(NavRoutes.MineDetail)}
         />
 
         <HMList
-          title={'All Product List'}
-          titleChildrenText={'All Product'}
+          title={Strings.AllProductList}
+          titleChildrenText={Strings.AllProduct}
           data={Functions.spliteArray(DummyData.Business.AllBusinessList)}
           vStack={true}
-          viewText={'View Mine'}
+          viewText={Strings.ViewMine}
           onViewProfilePress={() => navigation.navigate(NavRoutes.MineDetail)}
         />
       </HMHeader>

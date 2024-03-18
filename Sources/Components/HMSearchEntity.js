@@ -9,7 +9,7 @@ import {
   RNText,
 } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 import { HMDropDown } from './index';
 import { DummyData } from '../Utils';
 
@@ -51,7 +51,7 @@ const HMSearchEntity = () => {
   return (
     <View style={styles.container}>
       <View style={RNStyles.flexRowBetween}>
-        <RNText family={FontFamily.Medium}>{'Search Entity'}</RNText>
+        <RNText family={FontFamily.Medium}>{Strings.SearchEntity}</RNText>
         <RNIcon
           icon={Images.Cross}
           iconStyle={RNStyles.image50}
@@ -60,7 +60,7 @@ const HMSearchEntity = () => {
       </View>
 
       <HMDropDown
-        placeholder={'Please select'}
+        placeholder={Strings.PleaseSelect}
         data={DummyData.ProductFilterDropDown.Entities}
         dropdownStyle={styles.dropdownStyle}
         renderLeftIcon={() => (
@@ -73,7 +73,7 @@ const HMSearchEntity = () => {
           <View style={styles.renderInputSearchConatiner}>
             <RNImage source={Images.Search} style={styles.searchIcon} />
             <RNInput
-              placeholder={'Search here'}
+              placeholder={Strings.Searchhere}
               style={styles.input}
               onChangeText={onChange}
             />
@@ -86,7 +86,7 @@ const HMSearchEntity = () => {
       </RNText>
 
       <View style={styles.RightsContainer}>
-        <RNText size={FontSize.font14}>{'Select User Rights'}</RNText>
+        <RNText size={FontSize.font14}>{Strings.SelectUserRights}</RNText>
         {State.rights.map((v, i) => {
           const isFirst = i === 0;
           const color = isFirst ? Colors.Button : Colors.Black;
@@ -115,7 +115,7 @@ const HMSearchEntity = () => {
           );
         })}
         <RNButton
-          title={'Save'}
+          title={Strings.Save}
           style={styles.saveButton}
           textStyle={{ fontSize: FontSize.font12 }}
           onPress={() => setState(p => ({ ...p, closeComponent: true }))}

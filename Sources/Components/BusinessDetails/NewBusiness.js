@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { RNIcon, RNStyles, RNText, RNInput } from '../../Common';
-import { HMDropDown, HMInput } from '../index';
 import { Colors, hp, FontSize, FontFamily, wp } from '../../Theme';
-import { DummyData } from '../../Utils';
-import { Images } from '../../Constants';
-import moment from 'moment';
+import { RNIcon, RNStyles, RNText, RNInput } from '../../Common';
+import { DummyData, Functions } from '../../Utils';
+import { Images, Strings } from '../../Constants';
+import { HMDropDown, HMInput } from '../index';
+import DatePicker from 'react-native-date-picker';
 
 const NewBusiness = () => {
   const otherInfoRef = useRef();
@@ -16,24 +16,28 @@ const NewBusiness = () => {
     commenceDate: new Date(),
     expectedRevenue: { value: null, currency: null },
     archive: null,
+    openDatePicker: false,
   });
 
-  const onCommenceDatePress = () => {};
+  const onCommenceDatePress = () => {
+    setState(p => ({ ...p, openDatePicker: true }));
+  };
 
   return (
     <View style={RNStyles.container}>
-      <RNText style={styles.title}>{'New Business'}</RNText>
+      <RNText style={styles.title}>{Strings.NewBusiness}</RNText>
 
-      <HMInput title={'Name*'} placeholder={'RIL/Bapnu 2024'} />
-      <HMInput title={'Export Qty*'} placeholder={'550.000'} />
-      <HMInput title={'Expted no. of deliv*'} placeholder={'6'} />
+      <HMInput title={`${Strings.Name}*`} placeholder={'RIL/Bapnu 2024'} />
+      <HMInput title={`${Strings.ExportQty}*`} placeholder={'550.000'} />
+      <HMInput title={`${Strings.Exptednoofdeliv}*`} placeholder={'6'} />
 
       <View style={{ paddingTop: hp(1.5) }}>
-        <RNText color={Colors.Placeholder}>{'Delivery Period*'}</RNText>
+        <RNText
+          color={Colors.Placeholder}>{`${Strings.DeliveryPeriod}*`}</RNText>
         <View style={RNStyles.flexRow}>
           <View style={styles.blueWrapper}>
             <RNInput
-              placeholder={'January - December'}
+              placeholder={Strings.JanuarytoDecember}
               style={styles.deliveryMonthInput}
               onChangeText={v =>
                 setState(p => ({
@@ -60,7 +64,7 @@ const NewBusiness = () => {
       </View>
 
       <HMDropDown
-        title={'Discharging Port*'}
+        title={`${Strings.DischargingPort}*`}
         data={DummyData.UserProfile.Languages}
         placeholder={'Aalborg, Nordjyllandsvaerket'}
         onChange={v => setState(p => ({ ...p, dischargingPort: v }))}
@@ -68,17 +72,30 @@ const NewBusiness = () => {
       />
 
       <View style={{ paddingTop: hp(1.5) }}>
-        <RNText color={Colors.Placeholder}>{'Commence Date*'}</RNText>
+        <RNText color={Colors.Placeholder}>{`${Strings.CommenceDate}*`}</RNText>
         <TouchableOpacity
           onPress={onCommenceDatePress}
           style={[styles.blueWrapper, styles.commenceDate]}>
-          <RNText>{moment(State.commenceDate).format('DD-MMM-YYYY')}</RNText>
+          <RNText>{Functions.formatDate({ date: State.commenceDate })}</RNText>
           <RNIcon icon={Images.Calendar} onPress={onCommenceDatePress} />
         </TouchableOpacity>
       </View>
+      <DatePicker
+        modal={true}
+        open={State.openDatePicker}
+        date={State.commenceDate}
+        mode={'date'}
+        maximumDate={new Date()}
+        onConfirm={date =>
+          setState(p => ({ ...p, openDatePicker: false, commenceDate: date }))
+        }
+        onCancel={() => {
+          setState(p => ({ ...p, openDatePicker: false }));
+        }}
+      />
 
       <View style={{ paddingTop: hp(1.5) }}>
-        <RNText color={Colors.Placeholder}>{'Exptd avg. rev./t*'}</RNText>
+        <RNText color={Colors.Placeholder}>{`${Strings.Exptdavgrev}*`}</RNText>
         <View style={RNStyles.flexRow}>
           <View style={styles.blueWrapper}>
             <RNInput
@@ -109,14 +126,14 @@ const NewBusiness = () => {
       </View>
 
       <HMInput
-        title={'Expted avg. mrg/t*'}
+        title={`${Strings.Exptedavgmrg}*`}
         containerStyle={{ paddingTop: hp(1) }}
         placeholder={'1'}
       />
 
       <View style={{ paddingTop: hp(1.5) }}>
         <RNText pBottom={hp(1)} color={Colors.Placeholder}>
-          {'Other Information'}
+          {Strings.OtherInformation}
         </RNText>
         <TouchableOpacity
           activeOpacity={1}
@@ -125,13 +142,13 @@ const NewBusiness = () => {
           <RNInput
             ref={otherInfoRef}
             multiline={true}
-            placeholder={'Enter information'}
+            placeholder={Strings.Enterinformation}
           />
         </TouchableOpacity>
       </View>
 
       <RNText size={FontSize.font12} color={Colors.Placeholder}>
-        {'(i.e. options, risk adjustment, Etc..)'}
+        {Strings.ieoptionsriskadjustmentEtc}
       </RNText>
     </View>
   );

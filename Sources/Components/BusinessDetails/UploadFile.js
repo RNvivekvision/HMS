@@ -2,22 +2,20 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNButton, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
 
 const UploadFile = () => {
   return (
     <View style={RNStyles.container}>
-      <RNText style={styles.title}>{'Upload Files'}</RNText>
+      <RNText style={styles.title}>{Strings.UploadFiles}</RNText>
       <RNText size={FontSize.font12} color={Colors.Placeholder}>
-        {
-          'Allowed Extensions are PDF, JPG, PNG, GIF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ZIP, RAR, MP4, Wmv, MSG.'
-        }
+        {Strings.UploadFilesDesc}
       </RNText>
       <RNText size={FontSize.font12} color={Colors.Placeholder}>
-        {'Max File size is 05 MB.'}
+        {Strings.MaxFilesize}
       </RNText>
-
       <RNButton
-        title={'Upload Files'}
+        title={Strings.UploadFiles}
         style={styles.uploadFiles}
         textStyle={{ fontSize: FontSize.font12 }}
       />

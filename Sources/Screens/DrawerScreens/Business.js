@@ -10,6 +10,7 @@ import {
 import { FontFamily, FontSize, hp, wp } from '../../Theme';
 import { DummyData, Functions } from '../../Utils';
 import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const Business = ({ navigation }) => {
   const ref = useRef();
@@ -18,14 +19,14 @@ const Business = ({ navigation }) => {
     <View style={RNStyles.container}>
       <HMHeader
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
-        <RNText style={styles.title}>{'Business List'}</RNText>
+        <RNText style={styles.title}>{Strings.BusinessList}</RNText>
 
         <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <HMList
           data={DummyData.Business.LatestBusinessList}
-          title={'Latest Business List'}
-          viewText={'View Business'}
+          title={Strings.LatestBusinessList}
+          viewText={Strings.ViewBusiness}
           onViewProfilePress={() =>
             navigation.navigate(NavRoutes.BusinessDetail)
           }
@@ -34,9 +35,9 @@ const Business = ({ navigation }) => {
         <HMList
           data={Functions.spliteArray(DummyData.Business.AllBusinessList)}
           vStack={true}
-          viewText={'View Business'}
-          title={'All Business List'}
-          titleChildrenText={'All Business'}
+          viewText={Strings.ViewBusiness}
+          title={Strings.AllBusinessList}
+          titleChildrenText={Strings.AllBusiness}
           onViewProfilePress={() =>
             navigation.navigate(NavRoutes.BusinessDetail)
           }

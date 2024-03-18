@@ -1,15 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { HMProduct, HMSearchFilter } from '../Components';
-import { RNButton, RNHeader, RNStyles } from '../Common';
-import { DummyData } from '../Utils';
-import { hp, wp } from '../Theme';
+import { HMProduct, HMSearchFilter } from '../../Components';
+import { RNButton, RNHeader } from '../../Common';
+import { DummyData } from '../../Utils';
+import { hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
 
 const ProductDetail = ({ navigation }) => {
   return (
     <RNHeader
       title={'Steinkohle / Wesola'}
-      footer={<RNButton title={'Save'} style={styles.button} />}>
+      footer={<RNButton title={Strings.Save} style={styles.button} />}>
       <HMSearchFilter />
 
       <View style={styles.contentContainer}>

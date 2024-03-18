@@ -1,70 +1,70 @@
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 import { NavRoutes } from '../Navigation';
 
 const DummyData = {
   drawerScreens: [
     {
-      name: 'Users',
+      name: Strings.Users,
       icon: Images.Products,
       navigate: NavRoutes.Users,
     },
     {
-      name: 'Products',
+      name: Strings.Products,
       icon: Images.Products,
       navigate: NavRoutes.Products,
     },
     {
-      name: 'Businesses',
+      name: Strings.Businesses,
       icon: Images.Businesses,
       navigate: NavRoutes.Business,
     },
     {
-      name: 'Contracts',
+      name: Strings.Contracts,
       icon: Images.Contracts,
       navigate: NavRoutes.Mine,
     },
     {
-      name: 'Deliveries',
+      name: Strings.Deliveries,
       icon: Images.Deliveries,
     },
     {
-      name: 'Storage',
+      name: Strings.Storage,
       icon: Images.Storage,
     },
     {
-      name: 'Invoicing',
+      name: Strings.Invoicing,
       icon: Images.Invoicing,
     },
     {
-      name: 'Kn. Mgmt.',
+      name: Strings.KnMgmt,
       icon: Images.knMgmt,
     },
     {
-      name: 'Templates',
+      name: Strings.Templates,
       icon: Images.Templates,
     },
     {
-      name: 'Standing Data',
+      name: Strings.StandingData,
       icon: Images.StandingData,
     },
     {
-      name: 'Modules',
+      name: Strings.Modules,
       icon: Images.Modules,
     },
     {
-      name: 'DB Admin',
+      name: Strings.DBAdmin,
       icon: Images.DBAdmin,
     },
     {
-      name: 'Archive',
+      name: Strings.Archive,
       icon: Images.Archive,
     },
     {
-      name: 'Reports',
+      name: Strings.Reports,
       icon: Images.Reports,
     },
     {
-      name: 'Settings',
+      name: Strings.Settings,
       icon: Images.Settings,
     },
   ],

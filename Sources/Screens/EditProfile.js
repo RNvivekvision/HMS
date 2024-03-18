@@ -10,7 +10,7 @@ import {
 } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
 import { HMDropDown, HMEntity, HMInput } from '../Components';
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 import { DummyData } from '../Utils';
 
 const EditProfile = () => {
@@ -24,39 +24,42 @@ const EditProfile = () => {
   });
 
   return (
-    <RNHeader style={{ paddingHorizontal: wp(4) }} title={'Edit Profile'}>
+    <RNHeader style={{ paddingHorizontal: wp(4) }} title={Strings.EditProfile}>
       <View style={RNStyles.flexRowBetween}>
         <RNText size={FontSize.font18} family={FontFamily.Medium}>
-          {'Edit User Profile'}
+          {Strings.EditUserProfile}
         </RNText>
         <TouchableOpacity style={RNStyles.flexRow}>
           <RNImage source={Images.Reset} style={RNStyles.icon} />
           <RNText color={Colors.Button} pLeft={wp(1)} textLine={'underline'}>
-            {'Reset'}
+            {Strings.Reset}
           </RNText>
         </TouchableOpacity>
       </View>
 
-      <HMInput title={'Login*'} placeholder={'Peter'} />
-      <HMInput title={'Full Name*'} placeholder={'Peter Parker'} />
-      <HMInput title={'Short Name*'} placeholder={'PP1'} />
-      <HMInput title={'Email'} placeholder={'peterparker07'} />
+      <HMInput title={`${Strings.Login}*`} placeholder={Strings.Peter} />
+      <HMInput
+        title={`${Strings.FullName}*`}
+        placeholder={Strings.PeterParker}
+      />
+      <HMInput title={`${Strings.ShortName}*`} placeholder={'PP1'} />
+      <HMInput title={Strings.Email} placeholder={Strings.dummyEmailAddress} />
       <HMDropDown
-        title={'Language'}
+        title={Strings.Language}
         data={DummyData.UserProfile.Languages}
-        placeholder={'Please Select'}
+        placeholder={Strings.PleaseSelect}
         onChange={value => setState(p => ({ ...p, language: value }))}
         value={State.language}
       />
 
       <RNText size={FontSize.font18} pTop={hp(1)} family={FontFamily.Medium}>
-        {'Security'}
+        {Strings.Security}
       </RNText>
 
       <HMInput
-        title={'Password*'}
+        title={`${Strings.Password}*`}
         returnKeyType={'done'}
-        placeholder={'********'}
+        placeholder={Strings.dummyPassword}
         value={State.password}
         onChangeText={v => setState(p => ({ ...p, password: v }))}
         onSubmitEditing={() => confirmPasswordRef.current.focus()}
@@ -69,9 +72,9 @@ const EditProfile = () => {
 
       <HMInput
         ref={confirmPasswordRef}
-        title={'Re-enter Password*'}
+        title={`${Strings.ReenterPassword}*`}
         returnKeyType={'done'}
-        placeholder={'********'}
+        placeholder={Strings.dummyPassword}
         value={State.confirmPassword}
         onChangeText={v => setState(p => ({ ...p, confirmPassword: v }))}
         secureTextEntry={State.confirmPasswordSecure}
@@ -85,7 +88,7 @@ const EditProfile = () => {
       />
 
       <RNText pTop={hp(2)} color={Colors.Placeholder}>
-        {'Profile Photo'}
+        {Strings.ProfilePhoto}
       </RNText>
       <TouchableOpacity activeOpacity={0.6} style={styles.profilePicContainer}>
         <RNText family={FontFamily.SemiBold} size={FontSize.font30}>
@@ -102,7 +105,7 @@ const EditProfile = () => {
         size={FontSize.font18}
         pVertical={hp(0.5)}
         family={FontFamily.Medium}>
-        {'Entities & Rights'}
+        {Strings.EntitiesandRights}
       </RNText>
 
       <HMEntity
@@ -114,11 +117,11 @@ const EditProfile = () => {
           color={Colors.Button}
           textLine={'underline'}
           size={FontSize.font14}>
-          {'+Add Entities & Rights'}
+          {`+${Strings.AddEntitiesandRights}`}
         </RNText>
       </TouchableOpacity>
 
-      <RNButton title={'Add'} />
+      <RNButton title={Strings.Add} />
     </RNHeader>
   );
 };

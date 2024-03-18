@@ -4,13 +4,13 @@ import {
   EmployeeDetail,
   HMDropDown,
   HMInput,
-  HMProduct,
   HMSearchFilter,
   UploadFile,
-} from '../Components';
-import { RNButton, RNHeader, RNInput, RNStyles, RNText } from '../Common';
-import { DummyData } from '../Utils';
-import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
+} from '../../Components';
+import { RNButton, RNHeader, RNInput, RNText } from '../../Common';
+import { DummyData } from '../../Utils';
+import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
 
 const MineDetail = ({ navigation }) => {
   const otherInfoRef = useRef();
@@ -21,33 +21,33 @@ const MineDetail = ({ navigation }) => {
       <HMSearchFilter />
 
       <View style={styles.content}>
-        <RNText style={styles.title}>{'Mine/Pits'}</RNText>
+        <RNText style={styles.title}>{Strings.MinePit}</RNText>
 
-        <HMInput title={'Name*'} placeholder={'Zululand Colliery'} />
+        <HMInput title={`${Strings.Name}*`} placeholder={'Zululand Colliery'} />
         <HMDropDown
-          title={'Country*'}
+          title={`${Strings.Country}*`}
           data={DummyData.UserProfile.Languages}
           placeholder={'South Africa'}
           onChange={v => setState(p => ({ ...p, country: v }))}
           value={State.country}
         />
         <HMDropDown
-          title={'City*'}
+          title={`${Strings.City}*`}
           data={DummyData.UserProfile.Languages}
           placeholder={'Uganda'}
           onChange={v => setState(p => ({ ...p, city: v }))}
           value={State.city}
         />
-        <HMInput title={'Partner*'} placeholder={'Zac'} />
-        <HMInput title={'Region*'} placeholder={'Ulundi(KZN)'} />
+        <HMInput title={`${Strings.Partner}*`} placeholder={'Zac'} />
+        <HMInput title={`${Strings.Region}*`} placeholder={'Ulundi(KZN)'} />
         <HMInput
-          title={'Production Capacity*'}
+          title={`${Strings.ProductionCapacity}*`}
           placeholder={'720,000 mt p.a.'}
         />
 
         <View style={{ paddingTop: hp(1.5) }}>
           <RNText pBottom={hp(1)} color={Colors.Placeholder}>
-            {'Other Information'}
+            {Strings.OtherInformation}
           </RNText>
           <TouchableOpacity
             activeOpacity={1}
@@ -56,7 +56,7 @@ const MineDetail = ({ navigation }) => {
             <RNInput
               ref={otherInfoRef}
               multiline={true}
-              placeholder={'Enter Other information'}
+              placeholder={Strings.Enterinformation}
             />
           </TouchableOpacity>
         </View>
@@ -64,7 +64,7 @@ const MineDetail = ({ navigation }) => {
         <UploadFile />
         <EmployeeDetail />
 
-        <RNButton title={'Save'} />
+        <RNButton title={Strings.Save} />
       </View>
     </RNHeader>
   );

@@ -1,6 +1,7 @@
 import React, { forwardRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RNButton, RNStyles } from '../../Common';
+import { Strings } from '../../Constants';
 import { HMDropDown, HMFilterTitle } from '../index';
 import { DummyData } from '../../Utils';
 import { hp, wp } from '../../Theme';
@@ -17,41 +18,45 @@ const UserFilter = forwardRef(({}, ref) => {
 
   return (
     <View style={RNStyles.container}>
-      <HMFilterTitle title={'Filter'} onClosePress={closeSheet} />
+      <HMFilterTitle title={Strings.Filter} onClosePress={closeSheet} />
 
       <View style={styles.dropdownContainer}>
         <HMDropDown
-          title={'User Rights'}
+          title={Strings.UserRights}
           data={DummyData.ProductFilterDropDown.UserRights}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           onChange={value => setState(p => ({ ...p, userRight: value }))}
           value={State.userRight}
         />
         <HMDropDown
-          title={'Entities'}
+          title={Strings.Entities}
           data={DummyData.ProductFilterDropDown.Entities}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           onChange={value => setState(p => ({ ...p, entities: value }))}
           value={State.entities}
         />
         <HMDropDown
-          title={'Short Name'}
+          title={Strings.ShortName}
           data={DummyData.ProductFilterDropDown.ShortName}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           onChange={value => setState(p => ({ ...p, shortName: value }))}
           value={State.shortName}
         />
         <HMDropDown
-          title={'User Name'}
+          title={Strings.UserName}
           data={DummyData.ProductFilterDropDown.UserName}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           position={'top'}
           onChange={value => setState(p => ({ ...p, userName: value }))}
           value={State.userName}
         />
       </View>
 
-      <RNButton title={'Apply'} style={styles.button} onPress={closeSheet} />
+      <RNButton
+        title={Strings.Apply}
+        style={styles.button}
+        onPress={closeSheet}
+      />
     </View>
   );
 });

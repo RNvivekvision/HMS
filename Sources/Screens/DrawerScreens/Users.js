@@ -13,6 +13,7 @@ import {
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { DummyData, Functions } from '../../Utils';
 import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const Users = ({ navigation }) => {
   const ref = useRef();
@@ -22,8 +23,8 @@ const Users = ({ navigation }) => {
     <View style={RNStyles.container}>
       <HMDelete
         visible={State.showDelete}
-        title={'Storage Admin User Rights'}
-        text={'Are sure you want to delete storage admin user?'}
+        title={Strings.deleteTitle}
+        text={Strings.deleteTitleDesc}
         onClose={() => setState(p => ({ ...p, showDelete: false }))}
         buttonProps={{
           onPress: () => setState(p => ({ ...p, showDelete: false })),
@@ -33,28 +34,28 @@ const Users = ({ navigation }) => {
       <HMAlert
         visible={State.showEdit}
         onClose={() => setState(p => ({ ...p, showEdit: false }))}
-        title={'Add New User'}
-        buttontext={'Add'}
+        title={Strings.AddNewUser}
+        buttontext={Strings.Add}
         buttonProps={{
           onPress: () => setState(p => ({ ...p, showEdit: false })),
         }}>
         <HMInput
-          title={'Entitie Name'}
-          placeholder={'Entitie Name'}
+          title={Strings.EntitieName}
+          placeholder={Strings.EntitieName}
           containerStyle={{ paddingTop: 0 }}
         />
       </HMAlert>
 
       <HMHeader
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
-        <RNText style={styles.title}>{'User list'}</RNText>
+        <RNText style={styles.title}>{Strings.Userlist}</RNText>
 
         <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <HMList
           data={DummyData.LatestNewUsers}
-          title={'Latest New User'}
-          titleChildrenText={'+ Add New User'}
+          title={Strings.LatestNewUser}
+          titleChildrenText={'+' + Strings.AddNewUser}
           titleChildrenStyle={{ color: Colors.Button }}
           ontitleChildrenPress={() => navigation.navigate(NavRoutes.AddNewUser)}
           onEditPress={() => setState(p => ({ ...p, showEdit: true }))}
@@ -64,8 +65,8 @@ const Users = ({ navigation }) => {
         <HMList
           data={Functions.spliteArray(DummyData.LatestNewUsers)}
           vStack={true}
-          title={'All User List'}
-          titleChildrenText={'All user'}
+          title={Strings.AllUserList}
+          titleChildrenText={Strings.Alluser}
           onEditPress={() => setState(p => ({ ...p, showEdit: true }))}
           onDeletePress={() => setState(p => ({ ...p, showDelete: true }))}
         />

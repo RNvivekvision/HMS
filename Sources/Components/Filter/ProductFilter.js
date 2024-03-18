@@ -4,6 +4,7 @@ import { RNButton, RNStyles } from '../../Common';
 import { HMDropDown, HMFilterTitle } from '../index';
 import { DummyData } from '../../Utils';
 import { hp, wp } from '../../Theme';
+import { Strings } from '../../Constants';
 
 const ProductFilter = forwardRef(({}, ref) => {
   const [State, setState] = useState({
@@ -16,34 +17,38 @@ const ProductFilter = forwardRef(({}, ref) => {
 
   return (
     <View style={RNStyles.container}>
-      <HMFilterTitle title={'Filter'} onClosePress={closeSheet} />
+      <HMFilterTitle title={Strings.Filter} onClosePress={closeSheet} />
 
       <View style={styles.dropdownContainer}>
         <HMDropDown
-          title={'Partner'}
+          title={Strings.Partner}
           data={DummyData.ProductFilterDropDown.UserRights}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           onChange={value => setState(p => ({ ...p, partner: value }))}
           value={State.partner}
         />
         <HMDropDown
-          title={'Spec. Type'}
+          title={Strings.SpecType}
           data={DummyData.ProductFilterDropDown.Entities}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           onChange={value => setState(p => ({ ...p, specType: value }))}
           value={State.specType}
         />
         <HMDropDown
-          title={'Country'}
+          title={Strings.Country}
           data={DummyData.ProductFilterDropDown.ShortName}
-          placeholder={'Please Select'}
+          placeholder={Strings.PleaseSelect}
           position={'top'}
           onChange={value => setState(p => ({ ...p, country: value }))}
           value={State.country}
         />
       </View>
 
-      <RNButton title={'Apply'} style={styles.button} onPress={closeSheet} />
+      <RNButton
+        title={Strings.Apply}
+        style={styles.button}
+        onPress={closeSheet}
+      />
     </View>
   );
 });

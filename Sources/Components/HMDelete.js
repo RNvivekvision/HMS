@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, StyleSheet, View } from 'react-native';
 import { RNStyles, RNButton, RNImage, RNText } from '../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 
 const HMDelete = ({
   visible,
@@ -33,7 +33,7 @@ const HMDelete = ({
           <RNText style={[styles.title, titleStyle]}>{title}</RNText>
           <RNText style={[styles.text, textStyle]}>{text}</RNText>
           <RNButton
-            title={buttontext || 'Delete'}
+            title={buttontext || Strings.Delete}
             style={[styles.button, buttonStyle]}
             {...buttonProps}
           />

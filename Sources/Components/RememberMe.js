@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNImage, RNStyles, RNText } from '../Common';
 import { Colors, FontSize, wp } from '../Theme';
-import { Images } from '../Constants';
+import { Images, Strings } from '../Constants';
 
 const RememberMe = ({ containerStyle, onPress, title, children }) => {
   const [State, setState] = useState({ checkbox: true });
@@ -28,7 +28,7 @@ const RememberMe = ({ containerStyle, onPress, title, children }) => {
             size={FontSize.font14}
             pHorizontal={wp(2)}
             color={Colors.Black}>
-            {'Remember me'}
+            {Strings.Rememberme}
           </RNText>
         </View>
       </TouchableOpacity>

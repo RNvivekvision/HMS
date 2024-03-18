@@ -10,6 +10,7 @@ import {
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
 import { DummyData, Functions } from '../../Utils';
 import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const Products = ({ navigation }) => {
   const ref = useRef();
@@ -18,20 +19,20 @@ const Products = ({ navigation }) => {
     <View style={RNStyles.container}>
       <HMHeader
         onUserIconPress={() => navigation.navigate(NavRoutes.UserProfile)}>
-        <RNText style={styles.title}>{'Product list'}</RNText>
+        <RNText style={styles.title}>{Strings.Productlist}</RNText>
 
         <HMSearchFilter onFilterPress={() => ref.current?.present()} />
 
         <RNButton
-          title={'Mine/Pit'}
+          title={Strings.MinePit}
           style={styles.minePitButton}
           textStyle={{ fontSize: FontSize.font12 }}
         />
 
         <HMList
-          title={'Latest Product List'}
+          title={Strings.LatestProductList}
           data={DummyData.Business.LatestBusinessList}
-          viewText={'View Product'}
+          viewText={Strings.ViewProduct}
           onViewProfilePress={() =>
             navigation.navigate(NavRoutes.ProductDetail)
           }
@@ -39,10 +40,10 @@ const Products = ({ navigation }) => {
 
         <HMList
           vStack={true}
-          title={'All Product List'}
-          titleChildrenText={'All Product'}
+          title={Strings.AllProductList}
+          titleChildrenText={Strings.AllProduct}
           data={Functions.spliteArray(DummyData.Business.AllBusinessList)}
-          viewText={'View Product'}
+          viewText={Strings.ViewProduct}
           onViewProfilePress={() =>
             navigation.navigate(NavRoutes.ProductDetail)
           }

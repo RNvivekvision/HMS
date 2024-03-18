@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { AuthHeader, RememberMe, HMBack, HMInput } from '../Components';
-import { RNButton, RNDevider, RNText } from '../Common';
-import { FontFamily, FontSize, hp } from '../Theme';
-import { Images } from '../Constants';
+import { AuthHeader, RememberMe, HMBack, HMInput } from '../../Components';
+import { RNButton, RNDevider, RNText } from '../../Common';
+import { FontFamily, FontSize, hp } from '../../Theme';
+import { Images, Strings } from '../../Constants';
 
 const ResetPassword = ({ navigation }) => {
   const [State, setState] = useState({
@@ -13,27 +13,24 @@ const ResetPassword = ({ navigation }) => {
   });
   const confirmPasswordRef = useRef();
 
-  console.log({ State });
-
   return (
     <AuthHeader>
       <HMBack />
 
       <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.SemiBold}>
-        {'Reset Your Password'}
+        {Strings.ResetYourPassword}
       </RNText>
 
-      <RNText
-        size={FontSize.font12}
-        spacing={1}
-        pVertical={hp(2)}>{`Enter your new password for you account.`}</RNText>
+      <RNText size={FontSize.font12} spacing={1} pVertical={hp(2)}>
+        {Strings.ResetYourPasswordDesc}
+      </RNText>
 
       <RNDevider style={{ marginBottom: hp(1) }} />
 
       <HMInput
-        title={'Password*'}
+        title={Strings.Password + '*'}
         returnKeyType={'done'}
-        placeholder={'Enter you password'}
+        placeholder={Strings.dummyPassword}
         value={State.password}
         onChangeText={v => setState(p => ({ ...p, password: v }))}
         onSubmitEditing={() => confirmPasswordRef.current.focus()}
@@ -46,9 +43,9 @@ const ResetPassword = ({ navigation }) => {
 
       <HMInput
         ref={confirmPasswordRef}
-        title={'Re-enter Password*'}
+        title={Strings.ReenterPassword + '*'}
         returnKeyType={'done'}
-        placeholder={'Re-enter Your Password'}
+        placeholder={Strings.dummyPassword}
         value={State.confirmPassword}
         onChangeText={v => setState(p => ({ ...p, confirmPassword: v }))}
         secureTextEntry={State.confirmPasswordSecure}
@@ -64,7 +61,7 @@ const ResetPassword = ({ navigation }) => {
       <RememberMe onPress={isRemember => console.log({ isRemember })} />
 
       <RNButton
-        title={'Set Password'}
+        title={Strings.SetPassword}
         style={{ marginTop: hp(3) }}
         onPress={() => navigation.popToTop()}
       />

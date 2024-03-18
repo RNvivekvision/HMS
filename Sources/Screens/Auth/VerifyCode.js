@@ -1,32 +1,29 @@
 import React, { useState } from 'react';
 import { OtpInput } from 'react-native-otp-entry';
-import { AuthHeader, HMBack } from '../Components';
-import { RNButton, RNDevider, RNText } from '../Common';
-import { Colors, FontFamily, FontSize, hp, wp } from '../Theme';
-import { NavRoutes } from '../Navigation';
+import { AuthHeader, HMBack } from '../../Components';
+import { RNButton, RNDevider, RNText } from '../../Common';
+import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
+import { NavRoutes } from '../../Navigation';
+import { Strings } from '../../Constants';
 
 const VerifyCode = ({ navigation }) => {
   const [State, setState] = useState({ otp: '' });
-  console.log({ State });
 
   return (
     <AuthHeader>
       <HMBack />
 
       <RNText pTop={hp(2)} size={FontSize.font28} family={FontFamily.SemiBold}>
-        {'Verify Your Code'}
+        {Strings.VerifyYourCode}
       </RNText>
 
-      <RNText
-        size={FontSize.font12}
-        spacing={1}
-        pVertical={hp(
-          2,
-        )}>{`Enter your verification code that we sent you through your e-mail.`}</RNText>
+      <RNText size={FontSize.font12} spacing={1} pVertical={hp(2)}>
+        {Strings.VerifyYourCodeDesc}
+      </RNText>
 
       <RNDevider style={{ marginBottom: hp(3) }} />
 
-      <RNText color={Colors.Placeholder}>{'Enter Code'}</RNText>
+      <RNText color={Colors.Placeholder}>{Strings.EnterCode}</RNText>
 
       <OtpInput
         numberOfDigits={4}
@@ -36,7 +33,7 @@ const VerifyCode = ({ navigation }) => {
       />
 
       <RNButton
-        title={'Verify'}
+        title={Strings.Verify}
         style={{ marginTop: hp(8) }}
         onPress={() => navigation.navigate(NavRoutes.ResetPassword)}
       />
