@@ -72,7 +72,7 @@ const Users = ({ navigation }) => {
         />
       </HMHeader>
 
-      <RNBottomSheet ref={ref}>
+      <RNBottomSheet snapPoints={['75%', '80%']} ref={ref}>
         <UserFilter ref={ref} />
       </RNBottomSheet>
     </View>

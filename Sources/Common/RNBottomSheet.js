@@ -1,6 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import {
+  BottomSheetBackdrop,
   BottomSheetModal,
   BottomSheetModalProvider,
   BottomSheetView,
@@ -15,6 +16,13 @@ const RNBottomSheet = forwardRef(({ children, snapPoints }, ref) => {
     <BottomSheetModalProvider>
       <BottomSheetModal
         ref={ref}
+        backdropComponent={p => (
+          <BottomSheetBackdrop
+            {...p}
+            appearsOnIndex={0}
+            disappearsOnIndex={-1}
+          />
+        )}
         index={0}
         containerStyle={{ backgroundColor: '#00000050' }}
         style={styles.radius}
