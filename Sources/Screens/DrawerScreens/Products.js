@@ -50,7 +50,7 @@ const Products = ({ navigation }) => {
         />
       </HMHeader>
 
-      <RNBottomSheet snapPoints={['60%']} ref={ref}>
+      <RNBottomSheet snapPoints={['65%']} ref={ref}>
         <ProductFilter ref={ref} />
       </RNBottomSheet>
     </View>
